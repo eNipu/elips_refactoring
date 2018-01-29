@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFC43EA82019BF5D0033170A /* bn_settings.c */; };
+		EFF14498201F0976009D8F2B /* bn_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFF14497201F0976009D8F2B /* bn_fp.c */; };
 		EFFFEDD72019A1BC006B51FA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EFFFEDD62019A1BC006B51FA /* main.c */; };
+		EFFFEDDE2019A1CD006B51FA /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFFEDDD2019A1CD006B51FA /* libgmp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EFC43EA82019BF5D0033170A /* bn_settings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_settings.c; sourceTree = "<group>"; };
+		EFC43EA92019BF5D0033170A /* bn_settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bn_settings.h; sourceTree = "<group>"; };
+		EFF14496201F0970009D8F2B /* bn_fp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp.h; sourceTree = "<group>"; };
+		EFF14497201F0976009D8F2B /* bn_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_fp.c; sourceTree = "<group>"; };
 		EFFFEDD32019A1BC006B51FA /* elips_refactoring */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = elips_refactoring; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFFEDD62019A1BC006B51FA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		EFFFEDDD2019A1CD006B51FA /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgmp.a; sourceTree = "<group>"; };
+		EFFFEDE22019A240006B51FA /* Commont_headers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commont_headers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFFFEDDE2019A1CD006B51FA /* libgmp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,7 +67,13 @@
 		EFFFEDD52019A1BC006B51FA /* elips_refactoring */ = {
 			isa = PBXGroup;
 			children = (
+				EFFFEDDD2019A1CD006B51FA /* libgmp.a */,
+				EFF14496201F0970009D8F2B /* bn_fp.h */,
+				EFFFEDE22019A240006B51FA /* Commont_headers.h */,
 				EFFFEDD62019A1BC006B51FA /* main.c */,
+				EFF14497201F0976009D8F2B /* bn_fp.c */,
+				EFC43EA82019BF5D0033170A /* bn_settings.c */,
+				EFC43EA92019BF5D0033170A /* bn_settings.h */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";
@@ -119,6 +135,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF14498201F0976009D8F2B /* bn_fp.c in Sources */,
+				EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */,
 				EFFFEDD72019A1BC006B51FA /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +252,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83XHM8TH3F;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/elips_refactoring",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -243,6 +266,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 83XHM8TH3F;
+				HEADER_SEARCH_PATHS = /usr/local/include/;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/elips_refactoring",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

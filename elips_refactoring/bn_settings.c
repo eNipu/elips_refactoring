@@ -11,6 +11,8 @@
 
 struct bn_params bn_parameters;
 struct bn_coefficient bn_curve_coefficient;
+int X_binary[X_length+1];
+int X_binary_opt[X_length+3];
 //---------------------------------------------------------------------
 
 void BN12_init(){
@@ -32,6 +34,14 @@ void init_parameters(){
     mpz_init(bn_parameters.EFp12_total);
     mpz_init(bn_curve_coefficient.curve_a);
     mpz_init(bn_curve_coefficient.curve_b);
+    
+    int i;
+    for(i=0; i<X_length+1; i++){
+        X_binary[i]=0;
+    }
+    for(i=0; i<X_length+3; i++){
+        X_binary_opt[i]=0;
+    }
 }
 
 //---------------------------------------------------------------------

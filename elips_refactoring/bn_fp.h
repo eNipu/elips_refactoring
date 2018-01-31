@@ -10,10 +10,7 @@
 #define bn_fp_h
 
 #include "bn_settings.h"
-
-typedef struct{
-    mpz_t x0;
-}Fp;
+#include "bn_field_dtype.h"
 
 //Fp
 
@@ -45,6 +42,5 @@ extern int  Fp_cmp_ui(Fp *A,unsigned long int UI);
 extern int  Fp_cmp_mpz(Fp *A,mpz_t B);
 extern int  Fp_cmp_zero(Fp *A);
 extern int  Fp_cmp_one(Fp *A);
-
 
 #endif /* bn_fp_h */

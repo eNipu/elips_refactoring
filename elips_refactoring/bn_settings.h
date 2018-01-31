@@ -9,38 +9,9 @@
 #define bn_settings_h
 
 #include "Commont_headers.h"
+#include "bn_fp.h"
+#include "bn_fp2.h"
 
-/*============================================================================*/
-/* Macro definitions                                                          */
-/*============================================================================*/
-
-/**
- * @brief Defines TRUE or FALSE using integer
- *
- * The TRUE_1 defines true as int 1 when boolean decesion in true.
- * FALSE_0 defines the oppsite
- */
-#define TRUE_1 1
-#define FALSE_0 0
-/**
- * @brief maximum degree of mother parameter X's polynomial
- *
- *
- */
-#define X_length 114
-//#define x_bit 114
-#define x_bit_for_opt_ate 116
-
-
-/*============================================================================*/
-/* Data structure declarations                                                */
-/*============================================================================*/
-
-/**
- * @brief Structure to hold the BN curve settings.
- *
- * #bn_params hold the BN curves parametets.
- */
 struct bn_params {
     mpz_t prime;
     mpz_t X;
@@ -80,34 +51,30 @@ struct bn_coefficient{
  */
 extern struct bn_coefficient bn_curve_coefficient;
 
-/**
- * @brief The qudratic non residue over prime filed Fp.
- *
- * X^2-c1 is irreducible over the Fp
- */
-extern int c1;
+#define d12 12
+#define d24 24
+#define X_length 114
 
-/**
- * @brief Checks if all the parameters of BN curve is initialize.
- *
- */
-extern int is_params_set;
+enum state{
+    f_p1,f_p2,f_p3,f_p4,f_p5,f_p6,f_p7,f_p8,f_p9,f_p10,f_p11,f_p12
+};
 
-extern int TRUE;
-extern int FALSE;
+extern gmp_randstate_t state;
 
-/**
- * @brief Chracter arry of size [x_bit+1] that holds the singned binary representation of the mother parameter X.
- *
- * This x_signed_binary is important since it is used in the Miller's algorithm for efficeint calculation using the singned
- * binary representation of the mother parameter X.
- */
-extern char x_signed_binary [X_length+1];
+
 extern int X_binary[X_length+1];
-extern int X_bit_binary_for_opt_ate[x_bit_for_opt_ate+1];
-/*============================================================================*/
-/* Function declarations                                                      */
-/*============================================================================*/
+extern int X_binary_opt[X_length+3];
+
+extern struct Fp Fp_basis;
+extern struct Fp2 Fp2_basis;
+extern struct Fp2 Fp2_basis_inv;
+extern struct Fp6 Fp6_basis;
+
+extern mpz_t epsilon1,epsilon2;
+
+//extern struct Fp2 d12_frobenius_constant[d12][6];
+//extern struct Fp2 d12_skew_frobenius_constant[d12][2];
+
 
 //init
 extern void init_parameters( void);

@@ -6,10 +6,12 @@
 //  Copyright © 2018 ISec Lab. All rights reserved.
 //
 
-#include "Commont_headers.h"
+#include "bn_inits.h"
+
 
 int main(int argc, const char * argv[]) {
     // insert code here...
+    init_bn();
     printf("Hello, World!\n");
     return 0;
 }

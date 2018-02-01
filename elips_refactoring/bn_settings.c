@@ -233,5 +233,33 @@ void weil(){
 }
 
 
+void bn_print_parameters(){
+    printf("====================================================================================\n");
+    printf("BN12\n\n");
+    gmp_printf("parameters\n");
+    gmp_printf("X     (%dbit length) : %Zd \n",(int)mpz_sizeinbase(bn_parameters.X,2),bn_parameters.X);
+    gmp_printf("prime (%dbit length) : %Zd \n",(int)mpz_sizeinbase(bn_parameters.prime,2),bn_parameters.prime);
+    gmp_printf("order (%dbit length) : %Zd \n",(int)mpz_sizeinbase(bn_parameters.order,2),bn_parameters.order);
+    gmp_printf("trace (%dbit length) : %Zd \n",(int)mpz_sizeinbase(bn_parameters.trace_t,2),bn_parameters.trace_t);
+    
+    gmp_printf("\nelliptic curve\n");
+    gmp_printf("E:y^2=x^3-%Zd\n",bn_curve_coefficient.curve_b);
+    
+    gmp_printf("\nmodulo polynomial\n");
+    gmp_printf("Fp2  : f(x) = x^2+1\n");
+    gmp_printf("Fp6  : f(x) = x^3-(alpha+1)\n");
+    gmp_printf("Fp12 : f(x) = x^2-beta\n");
+    
+    gmp_printf("\nnumber of the total rational points\n");
+    gmp_printf("EFp total   : %Zd\n",bn_parameters.EFp_total);
+    gmp_printf("EFp12 total : %Zd\n",bn_parameters.EFpd_total);
+    
+//    gmp_printf("\ncubic root of 1\n");
+//    gmp_printf("epsilon1 : %Zd\n",epsilon1);
+//    gmp_printf("epsilon2 : %Zd\n",epsilon2);
+    
+}
+
+
 //---------------------------------------------------------------------
 

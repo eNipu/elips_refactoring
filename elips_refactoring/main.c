@@ -13,6 +13,7 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
     init_bn();
+    bn_print_parameters();
     clear_bn();
     printf("Hello, World!\n");
     return 0;

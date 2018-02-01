@@ -70,7 +70,7 @@ extern int  generate_order(void);
 extern void generate_trace(void);
 extern void set_curve_parameter(void);
 extern void weil(void);
-
+extern void bn_print_parameters(void);
 
 
 

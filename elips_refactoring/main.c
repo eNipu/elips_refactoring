@@ -7,11 +7,13 @@
 //
 
 #include "bn_inits.h"
+#include "bn_clears.h"
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     init_bn();
+    clear_bn();
     printf("Hello, World!\n");
     return 0;
 }

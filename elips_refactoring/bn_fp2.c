@@ -108,9 +108,9 @@ void Fp2_inv_basis(Fp2 *ANS,Fp2 *A){
     Fp2_set(&tmp,A);
     //TODO
     Fp_add(&ANS->x0,&tmp.x0,&tmp.x1);
-//    Fp_mul_mpz(&ANS->x0,&ANS->x0,Fp2_basis_inv.x0.x0);
+    Fp_mul_mpz(&ANS->x0,&ANS->x0,Fp2_basis_inv.x0.x0);
     Fp_sub(&ANS->x1,&tmp.x1,&tmp.x0);
-//    Fp_mul_mpz(&ANS->x1,&ANS->x1,Fp2_basis_inv.x0.x0);
+    Fp_mul_mpz(&ANS->x1,&ANS->x1,Fp2_basis_inv.x0.x0);
     
     Fp2_clear(&tmp);
 }

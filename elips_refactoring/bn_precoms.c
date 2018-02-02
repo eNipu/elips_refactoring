@@ -74,7 +74,7 @@ void get_epsilon(){
 void set_basis(){
     Fp_set_ui(&Fp_basis,1);
     Fp2_set_ui(&Fp2_basis,1);
-//    Fp6_set_ui(&Fp6_basis,0);
+    Fp6_set_ui(&Fp6_basis,0);
     Fp_set_ui(&Fp6_basis.x1.x0,1);
     
     Fp2_inv(&Fp2_basis_inv,&Fp2_basis);

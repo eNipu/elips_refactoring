@@ -11,6 +11,7 @@
 
 #include "bn_field_dtype.h"
 #include "bn_fp.h"
+#include "bn_precoms.h"
 
 //Fp2
 

@@ -16,4 +16,9 @@
 #include "bn_final_exp.h"
 #include "bn_utils.h"
 
+extern void BN12_tate(Fp12 *ANS,EFp12 *P, EFp12 *Q);
+extern void BN12_plain_ate(Fp12 *ANS,EFp12 *P,EFp12 *Q);
+extern void BN12_opt_ate(Fp12 *ANS,EFp12 *P, EFp12 *Q);
+extern void BN12_x_ate(Fp12 *ANS,EFp12 *P, EFp12 *Q);
+
 #endif /* bn_pairings_h */

@@ -250,9 +250,9 @@ void bn_print_parameters(){
     gmp_printf("Fp6  : f(x) = x^3-(alpha+1)\n");
     gmp_printf("Fp12 : f(x) = x^2-beta\n");
     
-    gmp_printf("\nnumber of the total rational points\n");
-    gmp_printf("EFp total   : %Zd\n",bn_parameters.EFp_total);
-    gmp_printf("EFp12 total : %Zd\n",bn_parameters.EFpd_total);
+//    gmp_printf("\nnumber of the total rational points\n");
+//    gmp_printf("EFp total   : %Zd\n",bn_parameters.EFp_total);
+//    gmp_printf("EFp12 total : %Zd\n",bn_parameters.EFpd_total);
     
 //    gmp_printf("\ncubic root of 1\n");
 //    gmp_printf("epsilon1 : %Zd\n",epsilon1);

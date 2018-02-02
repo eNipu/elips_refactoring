@@ -11,8 +11,5 @@
 
 #include "bn_generate_points.h"
 
-//rational points
-extern void BN12_generate_G1_point(EFp12 *P);
-extern void BN12_generate_G2_point(EFp12 *Q);
-extern void BN12_generate_random_point(EFp12 *R);
+
 #endif /* bn_prints_h */

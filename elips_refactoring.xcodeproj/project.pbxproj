@@ -128,28 +128,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EFFFEDCA2019A1BC006B51FA = {
+		EF58E68920243561005CA2D5 /* BN */ = {
 			isa = PBXGroup;
 			children = (
-				EFFFEDD52019A1BC006B51FA /* elips_refactoring */,
-				EFFFEDD42019A1BC006B51FA /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		EFFFEDD42019A1BC006B51FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EFFFEDD32019A1BC006B51FA /* elips_refactoring */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EFFFEDD52019A1BC006B51FA /* elips_refactoring */ = {
-			isa = PBXGroup;
-			children = (
-				EFFFEDDD2019A1CD006B51FA /* libgmp.a */,
-				EFFFEDE22019A240006B51FA /* Commont_headers.h */,
-				EFFFEDD62019A1BC006B51FA /* main.c */,
 				EFF14496201F0970009D8F2B /* bn_fp.h */,
 				EFF14497201F0976009D8F2B /* bn_fp.c */,
 				EFC43EA82019BF5D0033170A /* bn_settings.c */,
@@ -208,6 +189,33 @@
 				EF8514682023FE1400640A0F /* bn_pairings.h */,
 				EF85146A2024026C00640A0F /* bn_pairing_test.c */,
 				EF85146B2024026C00640A0F /* bn_pairing_test.h */,
+			);
+			path = BN;
+			sourceTree = "<group>";
+		};
+		EFFFEDCA2019A1BC006B51FA = {
+			isa = PBXGroup;
+			children = (
+				EFFFEDD52019A1BC006B51FA /* elips_refactoring */,
+				EFFFEDD42019A1BC006B51FA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EFFFEDD42019A1BC006B51FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFFFEDD32019A1BC006B51FA /* elips_refactoring */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFFFEDD52019A1BC006B51FA /* elips_refactoring */ = {
+			isa = PBXGroup;
+			children = (
+				EFFFEDDD2019A1CD006B51FA /* libgmp.a */,
+				EFFFEDE22019A240006B51FA /* Commont_headers.h */,
+				EFFFEDD62019A1BC006B51FA /* main.c */,
+				EF58E68920243561005CA2D5 /* BN */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";

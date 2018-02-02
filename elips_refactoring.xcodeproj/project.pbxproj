@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514462023EF2300640A0F /* bn_skew_frobenius.c */; };
 		EF85144B2023EFE300640A0F /* bn_twist.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514492023EFE300640A0F /* bn_twist.c */; };
+		EF85144E2023F0A300640A0F /* bn_line_ate.c in Sources */ = {isa = PBXBuildFile; fileRef = EF85144C2023F0A300640A0F /* bn_line_ate.c */; };
+		EF8514512023F13200640A0F /* bn_p8sparse.c in Sources */ = {isa = PBXBuildFile; fileRef = EF85144F2023F13200640A0F /* bn_p8sparse.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
 		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
@@ -46,6 +48,10 @@
 		EF8514472023EF2300640A0F /* bn_skew_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_skew_frobenius.h; sourceTree = "<group>"; };
 		EF8514492023EFE300640A0F /* bn_twist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_twist.c; sourceTree = "<group>"; };
 		EF85144A2023EFE300640A0F /* bn_twist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_twist.h; sourceTree = "<group>"; };
+		EF85144C2023F0A300640A0F /* bn_line_ate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_line_ate.c; sourceTree = "<group>"; };
+		EF85144D2023F0A300640A0F /* bn_line_ate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_line_ate.h; sourceTree = "<group>"; };
+		EF85144F2023F13200640A0F /* bn_p8sparse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_p8sparse.c; sourceTree = "<group>"; };
+		EF8514502023F13200640A0F /* bn_p8sparse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_p8sparse.h; sourceTree = "<group>"; };
 		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
@@ -158,6 +164,10 @@
 				EF8514472023EF2300640A0F /* bn_skew_frobenius.h */,
 				EF8514492023EFE300640A0F /* bn_twist.c */,
 				EF85144A2023EFE300640A0F /* bn_twist.h */,
+				EF85144C2023F0A300640A0F /* bn_line_ate.c */,
+				EF85144D2023F0A300640A0F /* bn_line_ate.h */,
+				EF85144F2023F13200640A0F /* bn_p8sparse.c */,
+				EF8514502023F13200640A0F /* bn_p8sparse.h */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";
@@ -233,9 +243,11 @@
 				EFBDC71D2022E28E00A70838 /* bn_utils.c in Sources */,
 				EFFFEDD72019A1BC006B51FA /* main.c in Sources */,
 				EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */,
+				EF85144E2023F0A300640A0F /* bn_line_ate.c in Sources */,
 				EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */,
 				EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */,
 				EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */,
+				EF8514512023F13200640A0F /* bn_p8sparse.c in Sources */,
 				EFBDC7292022FCCD00A70838 /* bn_efp2.c in Sources */,
 				EFBDC7202022EA6600A70838 /* bn_prints.c in Sources */,
 			);

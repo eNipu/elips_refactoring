@@ -14,6 +14,8 @@
 		EF8514542023F2C100640A0F /* bn_final_exp.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514522023F2C100640A0F /* bn_final_exp.c */; };
 		EF85145A2023F65500640A0F /* bn_line_tate.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514582023F65500640A0F /* bn_line_tate.c */; };
 		EF85145D2023F6BE00640A0F /* bn_miller_optate.c in Sources */ = {isa = PBXBuildFile; fileRef = EF85145B2023F6BE00640A0F /* bn_miller_optate.c */; };
+		EF8514602023F7A400640A0F /* bn_miller_ate.c in Sources */ = {isa = PBXBuildFile; fileRef = EF85145E2023F7A400640A0F /* bn_miller_ate.c */; };
+		EF8514632023FA3600640A0F /* bn_miller_tate.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514612023FA3600640A0F /* bn_miller_tate.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
 		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
@@ -61,6 +63,10 @@
 		EF8514592023F65500640A0F /* bn_line_tate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_line_tate.h; sourceTree = "<group>"; };
 		EF85145B2023F6BE00640A0F /* bn_miller_optate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_miller_optate.c; sourceTree = "<group>"; };
 		EF85145C2023F6BE00640A0F /* bn_miller_optate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_miller_optate.h; sourceTree = "<group>"; };
+		EF85145E2023F7A400640A0F /* bn_miller_ate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_miller_ate.c; sourceTree = "<group>"; };
+		EF85145F2023F7A400640A0F /* bn_miller_ate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_miller_ate.h; sourceTree = "<group>"; };
+		EF8514612023FA3600640A0F /* bn_miller_tate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_miller_tate.c; sourceTree = "<group>"; };
+		EF8514622023FA3600640A0F /* bn_miller_tate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_miller_tate.h; sourceTree = "<group>"; };
 		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				EF8514592023F65500640A0F /* bn_line_tate.h */,
 				EF85145B2023F6BE00640A0F /* bn_miller_optate.c */,
 				EF85145C2023F6BE00640A0F /* bn_miller_optate.h */,
+				EF85145E2023F7A400640A0F /* bn_miller_ate.c */,
+				EF85145F2023F7A400640A0F /* bn_miller_ate.h */,
+				EF8514612023FA3600640A0F /* bn_miller_tate.c */,
+				EF8514622023FA3600640A0F /* bn_miller_tate.h */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";
@@ -255,12 +265,14 @@
 				EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */,
 				EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */,
 				EF85144B2023EFE300640A0F /* bn_twist.c in Sources */,
+				EF8514602023F7A400640A0F /* bn_miller_ate.c in Sources */,
 				EF85145D2023F6BE00640A0F /* bn_miller_optate.c in Sources */,
 				EFBDC7232022F9AA00A70838 /* bn_efp.c in Sources */,
 				EFBDC71D2022E28E00A70838 /* bn_utils.c in Sources */,
 				EFFFEDD72019A1BC006B51FA /* main.c in Sources */,
 				EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */,
 				EF8514542023F2C100640A0F /* bn_final_exp.c in Sources */,
+				EF8514632023FA3600640A0F /* bn_miller_tate.c in Sources */,
 				EF85144E2023F0A300640A0F /* bn_line_ate.c in Sources */,
 				EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */,
 				EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */,

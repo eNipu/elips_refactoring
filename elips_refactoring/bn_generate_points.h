@@ -11,4 +11,14 @@
 
 #include "bn_frobenius.h"
 
+
+extern EFp12 G1_P;
+extern EFp12 G2_Q;
+extern EFp12 Random_R;
+
+//rational points
+extern void BN12_generate_G1_point(EFp12 *P);
+extern void BN12_generate_G2_point(EFp12 *Q);
+extern void BN12_generate_random_point(EFp12 *R);
+
 #endif /* bn_generate_points_h */

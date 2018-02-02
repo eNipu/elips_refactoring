@@ -79,3 +79,5 @@ void BN12_print_G3_2split_time(){
 void BN12_print_G3_4split_time(){
     printf("4split-G3-SCM time:%.2f[ms]\n",G3SCM_4SPLIT);
 }
+
+

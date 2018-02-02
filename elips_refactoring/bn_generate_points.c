@@ -8,6 +8,10 @@
 
 #include "bn_generate_points.h"
 
+EFp12 G1_P;
+EFp12 G2_Q;
+EFp12 Random_R;
+
 void BN12_generate_G1_point(EFp12 *P){
     EFp12_init(P);
     EFp Tmp;

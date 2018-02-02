@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EF8514462023EF2300640A0F /* bn_skew_frobenius.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
 		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
@@ -40,6 +41,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EF8514462023EF2300640A0F /* bn_skew_frobenius.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_skew_frobenius.c; sourceTree = "<group>"; };
+		EF8514472023EF2300640A0F /* bn_skew_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_skew_frobenius.h; sourceTree = "<group>"; };
 		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				EFBDC7312023093200A70838 /* bn_generate_points.h */,
 				EFBDC733202309C100A70838 /* bn_frobenius.c */,
 				EFBDC734202309C100A70838 /* bn_frobenius.h */,
+				EF8514462023EF2300640A0F /* bn_skew_frobenius.c */,
+				EF8514472023EF2300640A0F /* bn_skew_frobenius.h */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */,
 				EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */,
 				EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */,
+				EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */,
 				EFBDC7292022FCCD00A70838 /* bn_efp2.c in Sources */,
 				EFBDC7202022EA6600A70838 /* bn_prints.c in Sources */,
 			);

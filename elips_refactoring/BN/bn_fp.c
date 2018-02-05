@@ -14,7 +14,11 @@ void Fp_init(Fp *A){
 }
 
 void Fp_clear(Fp *A){
+//    if (A != NULL) {
+//          mpz_clear(A->x0);
+//    }
     mpz_clear(A->x0);
+//    printf("FP clear mpz %d\n",(int)mpz_size(A->x0));
 }
 
 void Fp_printf(Fp *A,char *str){

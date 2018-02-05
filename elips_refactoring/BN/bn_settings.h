@@ -12,6 +12,8 @@
 #include "bn_fp.h"
 #include "bn_fp2.h"
 
+extern int isCleared; // 1 is cleared. 0 is not cleared
+
 struct bn_params {
     mpz_t prime;
     mpz_t X;

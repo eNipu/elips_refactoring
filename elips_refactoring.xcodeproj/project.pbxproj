@@ -24,6 +24,9 @@
 		EFAD382E2028073400DA5197 /* bls12_twist.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD382C2028073400DA5197 /* bls12_twist.c */; };
 		EFAD3831202836AE00DA5197 /* bls12_inits.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD382F202836AE00DA5197 /* bls12_inits.c */; };
 		EFAD38342028374B00DA5197 /* bls12_clears.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD38322028374B00DA5197 /* bls12_clears.c */; };
+		EFAD383720286BDF00DA5197 /* bls12_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383520286BDF00DA5197 /* bls12_frobenius.c */; };
+		EFAD383A20286C4000DA5197 /* bls12_skew_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383820286C4000DA5197 /* bls12_skew_frobenius.c */; };
+		EFAD383D20286C8700DA5197 /* bls12_finalexp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383B20286C8700DA5197 /* bls12_finalexp.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
 		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
@@ -91,6 +94,12 @@
 		EFAD3830202836AE00DA5197 /* bls12_inits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_inits.h; sourceTree = "<group>"; };
 		EFAD38322028374B00DA5197 /* bls12_clears.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_clears.c; sourceTree = "<group>"; };
 		EFAD38332028374B00DA5197 /* bls12_clears.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_clears.h; sourceTree = "<group>"; };
+		EFAD383520286BDF00DA5197 /* bls12_frobenius.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_frobenius.c; sourceTree = "<group>"; };
+		EFAD383620286BDF00DA5197 /* bls12_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_frobenius.h; sourceTree = "<group>"; };
+		EFAD383820286C4000DA5197 /* bls12_skew_frobenius.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_skew_frobenius.c; sourceTree = "<group>"; };
+		EFAD383920286C4000DA5197 /* bls12_skew_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_skew_frobenius.h; sourceTree = "<group>"; };
+		EFAD383B20286C8700DA5197 /* bls12_finalexp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_finalexp.c; sourceTree = "<group>"; };
+		EFAD383C20286C8700DA5197 /* bls12_finalexp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_finalexp.h; sourceTree = "<group>"; };
 		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
@@ -221,6 +230,12 @@
 				EFAD3830202836AE00DA5197 /* bls12_inits.h */,
 				EFAD38322028374B00DA5197 /* bls12_clears.c */,
 				EFAD38332028374B00DA5197 /* bls12_clears.h */,
+				EFAD383520286BDF00DA5197 /* bls12_frobenius.c */,
+				EFAD383620286BDF00DA5197 /* bls12_frobenius.h */,
+				EFAD383820286C4000DA5197 /* bls12_skew_frobenius.c */,
+				EFAD383920286C4000DA5197 /* bls12_skew_frobenius.h */,
+				EFAD383B20286C8700DA5197 /* bls12_finalexp.c */,
+				EFAD383C20286C8700DA5197 /* bls12_finalexp.h */,
 			);
 			path = BLS;
 			sourceTree = "<group>";
@@ -319,6 +334,7 @@
 				EFAD3831202836AE00DA5197 /* bls12_inits.c in Sources */,
 				EFF14498201F0976009D8F2B /* bn_fp.c in Sources */,
 				EFBDC72C2022FEA200A70838 /* bn_efp6.c in Sources */,
+				EFAD383720286BDF00DA5197 /* bls12_frobenius.c in Sources */,
 				EFBDC71A2022DB1500A70838 /* bn_clears.c in Sources */,
 				EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */,
 				EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */,
@@ -335,8 +351,10 @@
 				EF85144E2023F0A300640A0F /* bn_line_ate.c in Sources */,
 				EFAD382E2028073400DA5197 /* bls12_twist.c in Sources */,
 				EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */,
+				EFAD383D20286C8700DA5197 /* bls12_finalexp.c in Sources */,
 				EF8514662023FD3600640A0F /* bn_miller_xate.c in Sources */,
 				EFAD38342028374B00DA5197 /* bls12_clears.c in Sources */,
+				EFAD383A20286C4000DA5197 /* bls12_skew_frobenius.c in Sources */,
 				EF85146C2024026C00640A0F /* bn_pairing_test.c in Sources */,
 				EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */,
 				EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */,

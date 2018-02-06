@@ -27,6 +27,13 @@
 		EFAD383720286BDF00DA5197 /* bls12_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383520286BDF00DA5197 /* bls12_frobenius.c */; };
 		EFAD383A20286C4000DA5197 /* bls12_skew_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383820286C4000DA5197 /* bls12_skew_frobenius.c */; };
 		EFAD383D20286C8700DA5197 /* bls12_finalexp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383B20286C8700DA5197 /* bls12_finalexp.c */; };
+		EFAD384020286D8600DA5197 /* bls12_p8sparse.c in Sources */ = {isa = PBXBuildFile; fileRef = EFAD383E20286D8600DA5197 /* bls12_p8sparse.c */; };
+		EFB2B7B1202927D1006973E8 /* bls12_line_ate.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7AF202927D1006973E8 /* bls12_line_ate.c */; };
+		EFB2B7B420292865006973E8 /* bls12_line_tate.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7B220292865006973E8 /* bls12_line_tate.c */; };
+		EFB2B7B7202928C7006973E8 /* bls12_miller_tate.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7B5202928C7006973E8 /* bls12_miller_tate.c */; };
+		EFB2B7BA20293004006973E8 /* bls12_miller_ate.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7B820293004006973E8 /* bls12_miller_ate.c */; };
+		EFB2B7BD20293096006973E8 /* bls12_miller_optate.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7BB20293096006973E8 /* bls12_miller_optate.c */; };
+		EFB2B7C020293100006973E8 /* bls12_pairings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7BE20293100006973E8 /* bls12_pairings.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
 		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
@@ -100,6 +107,20 @@
 		EFAD383920286C4000DA5197 /* bls12_skew_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_skew_frobenius.h; sourceTree = "<group>"; };
 		EFAD383B20286C8700DA5197 /* bls12_finalexp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_finalexp.c; sourceTree = "<group>"; };
 		EFAD383C20286C8700DA5197 /* bls12_finalexp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_finalexp.h; sourceTree = "<group>"; };
+		EFAD383E20286D8600DA5197 /* bls12_p8sparse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_p8sparse.c; sourceTree = "<group>"; };
+		EFAD383F20286D8600DA5197 /* bls12_p8sparse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_p8sparse.h; sourceTree = "<group>"; };
+		EFB2B7AF202927D1006973E8 /* bls12_line_ate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_line_ate.c; sourceTree = "<group>"; };
+		EFB2B7B0202927D1006973E8 /* bls12_line_ate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_line_ate.h; sourceTree = "<group>"; };
+		EFB2B7B220292865006973E8 /* bls12_line_tate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_line_tate.c; sourceTree = "<group>"; };
+		EFB2B7B320292865006973E8 /* bls12_line_tate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_line_tate.h; sourceTree = "<group>"; };
+		EFB2B7B5202928C7006973E8 /* bls12_miller_tate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_miller_tate.c; sourceTree = "<group>"; };
+		EFB2B7B6202928C7006973E8 /* bls12_miller_tate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_miller_tate.h; sourceTree = "<group>"; };
+		EFB2B7B820293004006973E8 /* bls12_miller_ate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_miller_ate.c; sourceTree = "<group>"; };
+		EFB2B7B920293004006973E8 /* bls12_miller_ate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_miller_ate.h; sourceTree = "<group>"; };
+		EFB2B7BB20293096006973E8 /* bls12_miller_optate.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_miller_optate.c; sourceTree = "<group>"; };
+		EFB2B7BC20293096006973E8 /* bls12_miller_optate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_miller_optate.h; sourceTree = "<group>"; };
+		EFB2B7BE20293100006973E8 /* bls12_pairings.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_pairings.c; sourceTree = "<group>"; };
+		EFB2B7BF20293100006973E8 /* bls12_pairings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_pairings.h; sourceTree = "<group>"; };
 		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
@@ -236,6 +257,20 @@
 				EFAD383920286C4000DA5197 /* bls12_skew_frobenius.h */,
 				EFAD383B20286C8700DA5197 /* bls12_finalexp.c */,
 				EFAD383C20286C8700DA5197 /* bls12_finalexp.h */,
+				EFAD383E20286D8600DA5197 /* bls12_p8sparse.c */,
+				EFAD383F20286D8600DA5197 /* bls12_p8sparse.h */,
+				EFB2B7AF202927D1006973E8 /* bls12_line_ate.c */,
+				EFB2B7B0202927D1006973E8 /* bls12_line_ate.h */,
+				EFB2B7B220292865006973E8 /* bls12_line_tate.c */,
+				EFB2B7B320292865006973E8 /* bls12_line_tate.h */,
+				EFB2B7B5202928C7006973E8 /* bls12_miller_tate.c */,
+				EFB2B7B6202928C7006973E8 /* bls12_miller_tate.h */,
+				EFB2B7B820293004006973E8 /* bls12_miller_ate.c */,
+				EFB2B7B920293004006973E8 /* bls12_miller_ate.h */,
+				EFB2B7BB20293096006973E8 /* bls12_miller_optate.c */,
+				EFB2B7BC20293096006973E8 /* bls12_miller_optate.h */,
+				EFB2B7BE20293100006973E8 /* bls12_pairings.c */,
+				EFB2B7BF20293100006973E8 /* bls12_pairings.h */,
 			);
 			path = BLS;
 			sourceTree = "<group>";
@@ -327,23 +362,29 @@
 			files = (
 				EF85145A2023F65500640A0F /* bn_line_tate.c in Sources */,
 				EFAD382B2028065D00DA5197 /* bls12_timeprint.c in Sources */,
+				EFB2B7B1202927D1006973E8 /* bls12_line_ate.c in Sources */,
 				EFBDC735202309C100A70838 /* bn_frobenius.c in Sources */,
 				EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */,
 				EFBDC7172022D50800A70838 /* bn_inits.c in Sources */,
 				EFF1449B201F0AEA009D8F2B /* bn_fp2.c in Sources */,
 				EFAD3831202836AE00DA5197 /* bls12_inits.c in Sources */,
 				EFF14498201F0976009D8F2B /* bn_fp.c in Sources */,
+				EFB2B7C020293100006973E8 /* bls12_pairings.c in Sources */,
 				EFBDC72C2022FEA200A70838 /* bn_efp6.c in Sources */,
+				EFB2B7BA20293004006973E8 /* bls12_miller_ate.c in Sources */,
 				EFAD383720286BDF00DA5197 /* bls12_frobenius.c in Sources */,
 				EFBDC71A2022DB1500A70838 /* bn_clears.c in Sources */,
 				EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */,
 				EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */,
 				EF85144B2023EFE300640A0F /* bn_twist.c in Sources */,
 				EF8514602023F7A400640A0F /* bn_miller_ate.c in Sources */,
+				EFB2B7B7202928C7006973E8 /* bls12_miller_tate.c in Sources */,
 				EF85145D2023F6BE00640A0F /* bn_miller_optate.c in Sources */,
 				EF58E69020246C13005CA2D5 /* bls12_settings.c in Sources */,
+				EFB2B7B420292865006973E8 /* bls12_line_tate.c in Sources */,
 				EFBDC7232022F9AA00A70838 /* bn_efp.c in Sources */,
 				EFBDC71D2022E28E00A70838 /* bn_utils.c in Sources */,
+				EFB2B7BD20293096006973E8 /* bls12_miller_optate.c in Sources */,
 				EFFFEDD72019A1BC006B51FA /* main.c in Sources */,
 				EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */,
 				EF8514542023F2C100640A0F /* bn_final_exp.c in Sources */,
@@ -351,6 +392,7 @@
 				EF85144E2023F0A300640A0F /* bn_line_ate.c in Sources */,
 				EFAD382E2028073400DA5197 /* bls12_twist.c in Sources */,
 				EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */,
+				EFAD384020286D8600DA5197 /* bls12_p8sparse.c in Sources */,
 				EFAD383D20286C8700DA5197 /* bls12_finalexp.c in Sources */,
 				EF8514662023FD3600640A0F /* bn_miller_xate.c in Sources */,
 				EFAD38342028374B00DA5197 /* bls12_clears.c in Sources */,

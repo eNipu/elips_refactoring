@@ -36,7 +36,7 @@ void BN12_generate_G2_point(EFp12 *Q){
     mpz_t exp;
     mpz_init(exp);
     
-    EFp12_rational_point(&random_P);
+    EFp12_rational_point_BN(&random_P);
     mpz_pow_ui(exp,bn_parameters.order,2);
     mpz_tdiv_q(exp,bn_parameters.EFpd_total,exp);
     EFp12_SCM(&P,&random_P,exp);
@@ -53,5 +53,5 @@ void BN12_generate_G2_point(EFp12 *Q){
 
 void BN12_generate_random_point(EFp12 *R){
     EFp12_init(R);
-    EFp12_rational_point(R);
+    EFp12_rational_point_BN(R);
 }

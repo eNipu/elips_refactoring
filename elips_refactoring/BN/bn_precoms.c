@@ -20,7 +20,18 @@ mpz_t epsilon1,epsilon2;
 Fp2 d12_frobenius_constant[d12][6];
 Fp2 d12_skew_frobenius_constant[d12][2];
 
-void init_precoms(void){
+static mpz_t prime_p;
+
+//curve type 1 denotes BN and Curve type 2 is BLS12
+void init_precoms(int curvetype){
+    
+    mpz_init(prime_p);
+    if (curvetype == 1) {
+        mpz_set(prime_p,bn_parameters.prime);
+    }
+    else{
+        mpz_set(prime_p,bls12_parameters.prime);
+    }
     
     Fp_init(&Fp_basis);
     Fp2_init(&Fp2_basis);
@@ -54,7 +65,7 @@ void get_epsilon(){
     
     Fp_set_ui(&buf,2);
     Fp_inv(&inv,&buf);
-    mpz_sub_ui(buf.x0,bn_parameters.prime,3);
+    mpz_sub_ui(buf.x0,prime_p,3);
     
     Fp_sqrt(&buf,&buf);
     Fp_sub_ui(&buf,&buf,1);
@@ -96,15 +107,15 @@ void set_frobenius_constant(){
     mpz_init(p8);
     mpz_init(p10);
     
-    mpz_mul(p2,bn_parameters.prime,bn_parameters.prime);
-    mpz_mul(p3,p2,bn_parameters.prime);
-    mpz_mul(p4,p3,bn_parameters.prime);
+    mpz_mul(p2,prime_p,prime_p);
+    mpz_mul(p3,p2,prime_p);
+    mpz_mul(p4,p3,prime_p);
     mpz_mul(p6,p4,p2);
     mpz_mul(p8,p6,p2);
     mpz_mul(p10,p8,p2);
     
     //frobenius_1
-    mpz_sub_ui(exp,bn_parameters.prime,1);
+    mpz_sub_ui(exp,prime_p,1);
     mpz_tdiv_q_ui(exp,exp,3);
     Fp2_pow(&tmp1,&Fp2_basis,exp);
     Fp2_mul(&tmp2,&tmp1,&tmp1);
@@ -119,7 +130,7 @@ void set_frobenius_constant(){
     Fp2_mul(&d12_frobenius_constant[f_p1][5],&tmp2,&tmp3);
     //set skew_f_p1
     Fp2_inv(&tmp1,&tmp1);
-    mpz_sub_ui(exp,bn_parameters.prime,1);
+    mpz_sub_ui(exp,prime_p,1);
     mpz_tdiv_q_ui(exp,exp,2);
     Fp2_pow(&tmp2,&Fp2_basis,exp);
     Fp2_inv(&tmp2,&tmp2);

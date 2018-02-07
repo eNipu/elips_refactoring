@@ -18,4 +18,22 @@ extern float BLS12_G1SCM_PLAIN,BLS12_G1SCM_2SPLIT;
 extern float BLS12_G2SCM_PLAIN,BLS12_G2SCM_2SPLIT,BLS12_G2SCM_4SPLIT;
 extern float BLS12_G3EXP_PLAIN,BLS12_G3EXP_2SPLIT,BLS12_G3EXP_4SPLIT;
 
+//print pairing
+extern void BLS12_print_parameters(void);
+extern void BLS12_print_G1_point(void);
+extern void BLS12_print_G2_point(void);
+extern void BLS12_print_tate_time(void);
+extern void BLS12_print_plain_ate_time(void);
+extern void BLS12_print_opt_ate_time(void);
+extern void BLS12_print_final_exp_plain_time(void);
+extern void BLS12_print_final_exp_optimal_time(void);
+extern void BLS12_print_plain_G1_scm_time(void);
+extern void BLS12_print_2split_G1_scm_time(void);
+extern void BLS12_print_plain_G2_scm_time(void);
+extern void BLS12_print_2split_G2_scm_time(void);
+extern void BLS12_print_4split_G2_scm_time(void);
+extern void BLS12_print_plain_G3_exp_time(void);
+extern void BLS12_print_2split_G3_exp_time(void);
+extern void BLS12_print_4split_G3_exp_time(void);
+
 #endif /* bls12_timeprint_h */

@@ -10,5 +10,5 @@
 
 void bls12_inits(){
     BLS12_init_settings();
-    
+    init_precoms(2);
 }

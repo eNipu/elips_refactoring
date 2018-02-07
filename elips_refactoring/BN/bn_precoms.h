@@ -10,6 +10,7 @@
 #define bn_precoms_h
 
 #include "bn_fp6.h"
+#include "bls12_settings.h"
 
 #define d12 12
 #define d24 24
@@ -29,7 +30,7 @@ extern mpz_t epsilon1,epsilon2;
 extern  Fp2 d12_frobenius_constant[d12][6];
 extern  Fp2 d12_skew_frobenius_constant[d12][2];
 
-extern void init_precoms(void);
+extern void init_precoms(int curvetype);
 extern void get_epsilon(void);
 extern void set_basis(void);
 extern void set_frobenius_constant(void);

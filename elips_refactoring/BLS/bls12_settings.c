@@ -22,9 +22,6 @@ void BLS12_init_settings(){
     BLS12_generate_trace();
     
     BLS12_weil();
-//    BLS12_get_epsilon();
-//    BLS12_set_basis();
-//    BLS12_set_frobenius_constant();
     BLS12_set_curve_parameter();
 }
 

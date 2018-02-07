@@ -13,19 +13,21 @@
 #include "bls12_inits.h"
 #include "bls12_settings.h"
 #include "bls12_clears.h"
-
+#include "bls12_pairings.h"
+#include "bls12_test_pairings.h"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    init_bn();
-    bn_print_parameters();
-//    BN12_test_x_ate_pairing();
-//    BN12_test_plain_ate_pairing();
+//    init_bn();
+//    bn_print_parameters();
+////    BN12_test_x_ate_pairing();
+////    BN12_test_plain_ate_pairing();
 //    BN12_test_opt_ate_pairing();
+//    clear_bn();
     
-    clear_bn();
     bls12_inits();
     BLS12_print_parameters();
+    BLS12_test_tate_pairing();
     clear_bls12();
     
     return 0;

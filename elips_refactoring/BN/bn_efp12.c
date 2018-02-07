@@ -7,6 +7,7 @@
 //
 
 #include "bn_efp12.h"
+#include "bls12_settings.h"
 
 void EFp12_init(EFp12 *P){
     Fp12_init(&P->x);
@@ -56,7 +57,7 @@ void EFp12_set_neg(EFp12 *ANS,EFp12 *P){
     ANS->infinity=P->infinity;
 }
 
-void EFp12_rational_point(EFp12 *P){
+void EFp12_rational_point_BN(EFp12 *P){
     Fp12 tmp1,tmp2;
     Fp12_init(&tmp1);
     Fp12_init(&tmp2);
@@ -78,6 +79,31 @@ void EFp12_rational_point(EFp12 *P){
     Fp12_clear(&tmp1);
     Fp12_clear(&tmp2);
 }
+
+void EFp12_rational_point_BLS12(EFp12 *P){
+    Fp12 tmp1,tmp2;
+    Fp12_init(&tmp1);
+    Fp12_init(&tmp2);
+    gmp_randstate_t state;
+    gmp_randinit_default (state);
+    gmp_randseed_ui(state,(unsigned long)time(NULL));
+    
+    while(1){
+        Fp12_set_random(&P->x,state);
+        Fp12_sqr(&tmp1,&P->x);
+        Fp12_mul(&tmp2,&tmp1,&P->x);
+        mpz_add(tmp2.x0.x0.x0.x0,tmp2.x0.x0.x0.x0, bls12_parameters.curve_b);
+        if(Fp12_legendre(&tmp2)==1){
+            Fp12_sqrt(&P->y,&tmp2);
+            break;
+        }
+    }
+    
+    Fp12_clear(&tmp1);
+    Fp12_clear(&tmp2);
+}
+
+
 
 void EFp12_ECD(EFp12 *ANS,EFp12 *P){
     if(Fp12_cmp_zero(&P->y)==0){

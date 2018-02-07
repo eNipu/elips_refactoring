@@ -1,5 +1,5 @@
 //
-//  bn_precoms.h
+//  bn_bls12_precoms.h
 //  elips_refactoring
 //
 //  Created by Khandaker Md. Al-Amin on 1/31/18.
@@ -10,7 +10,7 @@
 #define bn_precoms_h
 
 #include "bn_fp6.h"
-#include "bn_settings.h"
+#include "curve_settings.h"
 
 #define d12 12
 #define d24 24

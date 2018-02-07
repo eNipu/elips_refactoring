@@ -7,7 +7,7 @@
 //
 
 #include "bls12_generate_points.h"
-#include "bn_settings.h"
+#include "curve_settings.h"
 
 //rational points
 void BLS12_generate_G1_point(EFp12 *P){

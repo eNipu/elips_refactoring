@@ -6,8 +6,8 @@
 //  Copyright © 2018 Khandaker Md. Al-Amin. All rights reserved.
 //
 
-#include "bn_settings.h"
-//#include "bn_precoms.h"
+#include "curve_settings.h"
+//#include "bn_bls12_precoms.h"
 
 
 struct curve_params curve_parameters;

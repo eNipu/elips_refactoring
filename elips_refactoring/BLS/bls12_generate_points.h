@@ -9,7 +9,7 @@
 #ifndef bls12_generate_points_h
 #define bls12_generate_points_h
 
-#include "bn_settings.h"
+#include "curve_settings.h"
 #include "bls12_twist.h"
 #include "bls12_frobenius.h"
 

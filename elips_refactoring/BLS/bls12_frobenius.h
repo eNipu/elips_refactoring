@@ -10,7 +10,7 @@
 #define bls12_frobenius_h
 
 #include "bn_efp12.h"
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 
 
 //frobenius

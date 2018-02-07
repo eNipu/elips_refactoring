@@ -9,7 +9,7 @@
 #ifndef bls12_inits_h
 #define bls12_inits_h
 
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 
 extern void bls12_inits(void);
 

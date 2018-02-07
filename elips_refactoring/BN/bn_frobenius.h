@@ -10,7 +10,7 @@
 #define bn_frobenius_h
 
 #include "bn_efp12.h"
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 
 //frobenius
 extern void Fp12_frobenius_map_p1(Fp12 *ANS,Fp12 *A);

@@ -9,7 +9,7 @@
 #ifndef bls12_skew_frobenius_h
 #define bls12_skew_frobenius_h
 
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 #include "bn_efp12.h"
 
 

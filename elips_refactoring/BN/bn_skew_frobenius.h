@@ -9,7 +9,7 @@
 #ifndef bn_skew_frobenius_h
 #define bn_skew_frobenius_h
 
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 #include "bn_efp12.h"
 
 extern void EFp_skew_frobenius_map_p2(EFp *ANS,EFp *A);

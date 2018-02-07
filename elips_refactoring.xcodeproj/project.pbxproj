@@ -38,7 +38,7 @@
 		EFB2B7CC202942ED006973E8 /* bls12_test_pairings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFB2B7CA202942EC006973E8 /* bls12_test_pairings.c */; };
 		EFBDC70E20216C9F00A70838 /* bn_fp6.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70C20216C9F00A70838 /* bn_fp6.c */; };
 		EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC70F20216D0200A70838 /* bn_fp12.c */; };
-		EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_precoms.c */; };
+		EFBDC7142021751D00A70838 /* bn_bls12_precoms.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7122021751D00A70838 /* bn_bls12_precoms.c */; };
 		EFBDC7172022D50800A70838 /* bn_inits.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7152022D50800A70838 /* bn_inits.c */; };
 		EFBDC71A2022DB1500A70838 /* bn_clears.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7182022DB1500A70838 /* bn_clears.c */; };
 		EFBDC71D2022E28E00A70838 /* bn_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC71B2022E28E00A70838 /* bn_utils.c */; };
@@ -49,7 +49,7 @@
 		EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC72D2022FF1100A70838 /* bn_efp12.c */; };
 		EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7302023093200A70838 /* bn_generate_points.c */; };
 		EFBDC735202309C100A70838 /* bn_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC733202309C100A70838 /* bn_frobenius.c */; };
-		EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFC43EA82019BF5D0033170A /* bn_settings.c */; };
+		EFC43EAA2019BF5D0033170A /* curve_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFC43EA82019BF5D0033170A /* curve_settings.c */; };
 		EFF14498201F0976009D8F2B /* bn_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFF14497201F0976009D8F2B /* bn_fp.c */; };
 		EFF1449B201F0AEA009D8F2B /* bn_fp2.c in Sources */ = {isa = PBXBuildFile; fileRef = EFF14499201F0AEA009D8F2B /* bn_fp2.c */; };
 		EFFFEDD72019A1BC006B51FA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = EFFFEDD62019A1BC006B51FA /* main.c */; };
@@ -132,8 +132,8 @@
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
 		EFBDC70F20216D0200A70838 /* bn_fp12.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp12.c; sourceTree = "<group>"; };
 		EFBDC71020216D0200A70838 /* bn_fp12.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp12.h; sourceTree = "<group>"; };
-		EFBDC7122021751D00A70838 /* bn_precoms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_precoms.c; sourceTree = "<group>"; };
-		EFBDC7132021751D00A70838 /* bn_precoms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_precoms.h; sourceTree = "<group>"; };
+		EFBDC7122021751D00A70838 /* bn_bls12_precoms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_bls12_precoms.c; sourceTree = "<group>"; };
+		EFBDC7132021751D00A70838 /* bn_bls12_precoms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_bls12_precoms.h; sourceTree = "<group>"; };
 		EFBDC7152022D50800A70838 /* bn_inits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_inits.c; sourceTree = "<group>"; };
 		EFBDC7162022D50800A70838 /* bn_inits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_inits.h; sourceTree = "<group>"; };
 		EFBDC7182022DB1500A70838 /* bn_clears.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_clears.c; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 		EFBDC7312023093200A70838 /* bn_generate_points.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_generate_points.h; sourceTree = "<group>"; };
 		EFBDC733202309C100A70838 /* bn_frobenius.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_frobenius.c; sourceTree = "<group>"; };
 		EFBDC734202309C100A70838 /* bn_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_frobenius.h; sourceTree = "<group>"; };
-		EFC43EA82019BF5D0033170A /* bn_settings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_settings.c; sourceTree = "<group>"; };
-		EFC43EA92019BF5D0033170A /* bn_settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bn_settings.h; sourceTree = "<group>"; };
+		EFC43EA82019BF5D0033170A /* curve_settings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = curve_settings.c; sourceTree = "<group>"; };
+		EFC43EA92019BF5D0033170A /* curve_settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve_settings.h; sourceTree = "<group>"; };
 		EFF14496201F0970009D8F2B /* bn_fp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp.h; sourceTree = "<group>"; };
 		EFF14497201F0976009D8F2B /* bn_fp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bn_fp.c; sourceTree = "<group>"; };
 		EFF14499201F0AEA009D8F2B /* bn_fp2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp2.c; sourceTree = "<group>"; };
@@ -228,12 +228,12 @@
 				EF85146B2024026C00640A0F /* bn_pairing_test.h */,
 				EF8514672023FE1400640A0F /* bn_pairings.c */,
 				EF8514682023FE1400640A0F /* bn_pairings.h */,
-				EFBDC7122021751D00A70838 /* bn_precoms.c */,
-				EFBDC7132021751D00A70838 /* bn_precoms.h */,
+				EFBDC7122021751D00A70838 /* bn_bls12_precoms.c */,
+				EFBDC7132021751D00A70838 /* bn_bls12_precoms.h */,
 				EFBDC71E2022EA6600A70838 /* bn_prints.c */,
 				EFBDC71F2022EA6600A70838 /* bn_prints.h */,
-				EFC43EA82019BF5D0033170A /* bn_settings.c */,
-				EFC43EA92019BF5D0033170A /* bn_settings.h */,
+				EFC43EA82019BF5D0033170A /* curve_settings.c */,
+				EFC43EA92019BF5D0033170A /* curve_settings.h */,
 				EF8514462023EF2300640A0F /* bn_skew_frobenius.c */,
 				EF8514472023EF2300640A0F /* bn_skew_frobenius.h */,
 				EF8514492023EFE300640A0F /* bn_twist.c */,
@@ -376,7 +376,7 @@
 				EFB2B7C320293526006973E8 /* bls12_generate_points.c in Sources */,
 				EFBDC735202309C100A70838 /* bn_frobenius.c in Sources */,
 				EFB2B7CC202942ED006973E8 /* bls12_test_pairings.c in Sources */,
-				EFBDC7142021751D00A70838 /* bn_precoms.c in Sources */,
+				EFBDC7142021751D00A70838 /* bn_bls12_precoms.c in Sources */,
 				EFBDC7172022D50800A70838 /* bn_inits.c in Sources */,
 				EFF1449B201F0AEA009D8F2B /* bn_fp2.c in Sources */,
 				EFAD3831202836AE00DA5197 /* bls12_inits.c in Sources */,
@@ -388,7 +388,7 @@
 				EFAD383720286BDF00DA5197 /* bls12_frobenius.c in Sources */,
 				EFBDC71A2022DB1500A70838 /* bn_clears.c in Sources */,
 				EFBDC71120216D0200A70838 /* bn_fp12.c in Sources */,
-				EFC43EAA2019BF5D0033170A /* bn_settings.c in Sources */,
+				EFC43EAA2019BF5D0033170A /* curve_settings.c in Sources */,
 				EF85144B2023EFE300640A0F /* bn_twist.c in Sources */,
 				EF8514602023F7A400640A0F /* bn_miller_ate.c in Sources */,
 				EFB2B7B7202928C7006973E8 /* bls12_miller_tate.c in Sources */,

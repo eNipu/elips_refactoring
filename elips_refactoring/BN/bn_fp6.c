@@ -7,7 +7,7 @@
 //
 
 #include "bn_fp6.h"
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 
 
 void Fp6_init(Fp6 *A){

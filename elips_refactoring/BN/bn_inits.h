@@ -9,8 +9,8 @@
 #ifndef bn_inits_h
 #define bn_inits_h
 
-#include "bn_precoms.h"
-#include "bn_settings.h"
+#include "bn_bls12_precoms.h"
+#include "curve_settings.h"
 
 extern void init_bn(void);
 

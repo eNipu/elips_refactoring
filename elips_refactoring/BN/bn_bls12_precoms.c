@@ -6,7 +6,7 @@
 //  Copyright © 2018 ISec Lab. All rights reserved.
 //
 
-#include "bn_precoms.h"
+#include "bn_bls12_precoms.h"
 
 gmp_randstate_t state;
 

@@ -1,5 +1,5 @@
 //
-//  bn_settings.h
+//  curve_settings.h
 //
 //  Created by Khandaker Md. Al-Amin on 1/25/18.
 //  Copyright © 2018 Khandaker Md. Al-Amin. All rights reserved.

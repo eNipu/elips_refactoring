@@ -10,7 +10,6 @@
 #define bls12_miller_tate_h
 
 #include "bls12_line_tate.h"
-#include "bls12_settings.h"
 #include "bls12_twist.h"
 
 //miller algo for tate

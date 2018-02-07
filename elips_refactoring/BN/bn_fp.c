@@ -14,11 +14,7 @@ void Fp_init(Fp *A){
 }
 
 void Fp_clear(Fp *A){
-//    if (A != NULL) {
-//          mpz_clear(A->x0);
-//    }
     mpz_clear(A->x0);
-//    printf("FP clear mpz %d\n",(int)mpz_size(A->x0));
 }
 
 void Fp_printf(Fp *A,char *str){
@@ -42,64 +38,64 @@ void Fp_set_neg(Fp *ANS,Fp *A){
 }
 
 void Fp_set_random(Fp *ANS,gmp_randstate_t state){
-    mpz_urandomm(ANS->x0,state,bn_parameters.prime);
+    mpz_urandomm(ANS->x0,state,curve_parameters.prime);
 }
 
 void Fp_mul(Fp *ANS,Fp *A,Fp *B){
     mpz_mul(ANS->x0,A->x0,B->x0);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_mul_ui(Fp *ANS,Fp *A,unsigned long int UI){
     mpz_mul_ui(ANS->x0,A->x0,UI);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_mul_mpz(Fp *ANS,Fp *A,mpz_t B){
     mpz_mul(ANS->x0,A->x0,B);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_mul_basis(Fp *ANS,Fp *A){
-    mpz_sub(ANS->x0,bn_parameters.prime,A->x0);
+    mpz_sub(ANS->x0,curve_parameters.prime,A->x0);
 }
 
 void Fp_add(Fp *ANS,Fp *A,Fp *B){
     mpz_add(ANS->x0,A->x0,B->x0);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_add_ui(Fp *ANS,Fp *A,unsigned long int UI){
     mpz_add_ui(ANS->x0,A->x0,UI);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_add_mpz(Fp *ANS,Fp *A,mpz_t B){
     mpz_add(ANS->x0,A->x0,B);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_sub(Fp *ANS,Fp *A,Fp *B){
     mpz_sub(ANS->x0,A->x0,B->x0);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_sub_ui(Fp *ANS,Fp *A,unsigned long int UI){
     mpz_sub_ui(ANS->x0,A->x0,UI);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_sub_mpz(Fp *ANS,Fp *A,mpz_t B){
     mpz_sub(ANS->x0,A->x0,B);
-    mpz_mod(ANS->x0,ANS->x0,bn_parameters.prime);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 void Fp_inv(Fp *ANS,Fp *A){
-    mpz_invert(ANS->x0,A->x0,bn_parameters.prime);
+    mpz_invert(ANS->x0,A->x0,curve_parameters.prime);
 }
 
 int  Fp_legendre(Fp *A){
-    return mpz_legendre(A->x0,bn_parameters.prime);
+    return mpz_legendre(A->x0,curve_parameters.prime);
 }
 
 int  Fp_isCNR(Fp *A){
@@ -108,7 +104,7 @@ int  Fp_isCNR(Fp *A){
     mpz_t exp;
     mpz_init(exp);
     
-    mpz_sub_ui(exp,bn_parameters.prime,1);
+    mpz_sub_ui(exp,curve_parameters.prime,1);
     mpz_tdiv_q_ui(exp,exp,3);
     Fp_pow(&tmp,A,exp);
     
@@ -145,7 +141,7 @@ void Fp_sqrt(Fp *ANS,Fp *A){
     while(Fp_legendre(&n)!=-1){
         Fp_set_random(&n,state);
     }
-    mpz_sub_ui(q,bn_parameters.prime,1);
+    mpz_sub_ui(q,curve_parameters.prime,1);
     mpz_mod_ui(result,q,2);
     e=0;
     while(mpz_cmp_ui(result,0)==0){

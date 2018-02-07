@@ -14,7 +14,6 @@
 #include "bls12_timeprint.h"
 #include "bls12_twist.h"
 #include "bls12_skew_frobenius.h"
-#include "bls12_settings.h"
 
 
 

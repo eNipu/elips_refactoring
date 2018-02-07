@@ -184,7 +184,7 @@ int  Fp2_legendre(Fp2 *A){
     
     mpz_t exp;
     mpz_init(exp);
-    mpz_pow_ui(exp,bn_parameters.prime,2);
+    mpz_pow_ui(exp,curve_parameters.prime,2);
     mpz_sub_ui(exp,exp,1);
     mpz_tdiv_q_ui(exp,exp,2);
     Fp2_pow(&tmp,A,exp);
@@ -206,7 +206,7 @@ int  Fp2_isCNR(Fp2 *A){
     mpz_t exp;
     mpz_init(exp);
     
-    mpz_pow_ui(exp,bn_parameters.prime,2);
+    mpz_pow_ui(exp,curve_parameters.prime,2);
     mpz_sub_ui(exp,exp,1);
     mpz_tdiv_q_ui(exp,exp,3);
     Fp2_pow(&tmp,A,exp);
@@ -245,7 +245,7 @@ void Fp2_sqrt(Fp2 *ANS,Fp2 *A){
     while(Fp2_legendre(&n)!=-1){
         Fp2_set_random(&n,state);
     }
-    mpz_pow_ui(q,bn_parameters.prime,2);
+    mpz_pow_ui(q,curve_parameters.prime,2);
     mpz_sub_ui(q,q,1);
     mpz_mod_ui(result,q,2);
     e=0;

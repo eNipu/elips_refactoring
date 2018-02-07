@@ -16,9 +16,9 @@ void BLS12_Miller_algo_for_tate(Fp12 *ANS,EFp12 *P,EFp12 *Q){
     Fp12 f;
     Fp12_init(&f);
     int i,length;
-    length=(int)mpz_sizeinbase(bls12_parameters.order,2);
+    length=(int)mpz_sizeinbase(curve_parameters.order,2);
     char binary[length];
-    mpz_get_str(binary,2,bls12_parameters.order);
+    mpz_get_str(binary,2,curve_parameters.order);
     
     //set
     BLS12_EFp12_to_EFp(&Tmp_P,P);

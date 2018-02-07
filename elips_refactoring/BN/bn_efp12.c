@@ -7,7 +7,6 @@
 //
 
 #include "bn_efp12.h"
-#include "bls12_settings.h"
 
 void EFp12_init(EFp12 *P){
     Fp12_init(&P->x);
@@ -69,7 +68,7 @@ void EFp12_rational_point_BN(EFp12 *P){
         Fp12_set_random(&P->x,state);
         Fp12_sqr(&tmp1,&P->x);
         Fp12_mul(&tmp2,&tmp1,&P->x);
-        mpz_sub(tmp2.x0.x0.x0.x0,tmp2.x0.x0.x0.x0,bn_curve_coefficient.curve_b);
+        mpz_sub(tmp2.x0.x0.x0.x0,tmp2.x0.x0.x0.x0,curve_parameters.curve_b);
         if(Fp12_legendre(&tmp2)==1){
             Fp12_sqrt(&P->y,&tmp2);
             break;
@@ -92,7 +91,7 @@ void EFp12_rational_point_BLS12(EFp12 *P){
         Fp12_set_random(&P->x,state);
         Fp12_sqr(&tmp1,&P->x);
         Fp12_mul(&tmp2,&tmp1,&P->x);
-        mpz_add(tmp2.x0.x0.x0.x0,tmp2.x0.x0.x0.x0, bls12_parameters.curve_b);
+        mpz_add(tmp2.x0.x0.x0.x0,tmp2.x0.x0.x0.x0, curve_parameters.curve_b);
         if(Fp12_legendre(&tmp2)==1){
             Fp12_sqrt(&P->y,&tmp2);
             break;

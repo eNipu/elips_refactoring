@@ -68,7 +68,7 @@ void EFp6_rational_point(EFp6 *P){
         Fp6_set_random(&P->x,state);
         Fp6_sqr(&tmp1,&P->x);
         Fp6_mul(&tmp2,&tmp1,&P->x);
-        mpz_sub(tmp2.x0.x0.x0,tmp2.x0.x0.x0,bn_curve_coefficient.curve_b);
+        mpz_sub(tmp2.x0.x0.x0,tmp2.x0.x0.x0,curve_parameters.curve_b);
         if(Fp6_legendre(&tmp2)==1){
             Fp6_sqrt(&P->y,&tmp2);
             break;

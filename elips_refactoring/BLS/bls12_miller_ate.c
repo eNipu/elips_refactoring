@@ -38,7 +38,7 @@ void BLS12_Miller_algo_for_plain_ate(Fp12 *ANS,EFp12 *P,EFp12 *Q){
     Fp12_set_ui(&f,0);            //set f
     Fp_set_ui(&f.x0.x0.x0,1);
     
-    mpz_sub_ui(loop,bls12_parameters.trace_t,1);
+    mpz_sub_ui(loop,curve_parameters.trace_t,1);
     mpz_neg(loop,loop);
     
     length=(int)mpz_sizeinbase(loop,2);

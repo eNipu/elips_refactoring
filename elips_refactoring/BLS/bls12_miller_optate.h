@@ -12,7 +12,6 @@
 #include "bls12_twist.h"
 #include "bls12_p8sparse.h"
 #include "bls12_line_ate.h"
-#include "bls12_settings.h"
 
 
 //miller algo for opt-ate

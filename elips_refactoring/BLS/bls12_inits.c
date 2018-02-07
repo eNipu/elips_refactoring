@@ -9,6 +9,6 @@
 #include "bls12_inits.h"
 
 void bls12_inits(){
-    BLS12_init_settings();
+    init_bls12_settings();
     init_precoms(2);
 }

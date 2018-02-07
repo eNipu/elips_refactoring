@@ -11,6 +11,6 @@
 
 #include "bn_inits.h"
 
-extern void clear_bn(void);
+extern void clear_parameters(void);
 
 #endif /* bn_clears_h */

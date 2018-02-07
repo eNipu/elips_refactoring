@@ -32,10 +32,10 @@ void BLS12_test_tate_pairing(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(s1,state,bls12_parameters.order);
-    mpz_urandomm(s2,state,bls12_parameters.order);
+    mpz_urandomm(s1,state,curve_parameters.order);
+    mpz_urandomm(s2,state,curve_parameters.order);
     mpz_mul(s12,s1,s2);
-    mpz_mod(s12,s12,bls12_parameters.order);
+    mpz_mod(s12,s12,curve_parameters.order);
     
     printf("input\n");
     BLS12_generate_G1_point(&P);
@@ -118,10 +118,10 @@ void BLS12_test_plain_ate_pairing(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(s1,state,bls12_parameters.order);
-    mpz_urandomm(s2,state,bls12_parameters.order);
+    mpz_urandomm(s1,state,curve_parameters.order);
+    mpz_urandomm(s2,state,curve_parameters.order);
     mpz_mul(s12,s1,s2);
-    mpz_mod(s12,s12,bls12_parameters.order);
+    mpz_mod(s12,s12,curve_parameters.order);
     
     printf("input\n");
     BLS12_generate_G1_point(&P);
@@ -205,10 +205,10 @@ void BLS12_test_opt_ate_pairing(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(s1,state,bls12_parameters.order);
-    mpz_urandomm(s2,state,bls12_parameters.order);
+    mpz_urandomm(s1,state,curve_parameters.order);
+    mpz_urandomm(s2,state,curve_parameters.order);
     mpz_mul(s12,s1,s2);
-    mpz_mod(s12,s12,bls12_parameters.order);
+    mpz_mod(s12,s12,curve_parameters.order);
     
     printf("input\n");
     BLS12_generate_G1_point(&P);
@@ -284,7 +284,7 @@ void BLS12_test_G1_scm(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(scalar,state,bls12_parameters.order);
+    mpz_urandomm(scalar,state,curve_parameters.order);
     //printf("scalar:");
     //gmp_printf("%Zd",scalar);
     //printf("\n\n");
@@ -331,7 +331,7 @@ void BLS12_test_G2_scm(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(scalar,state,bls12_parameters.order);
+    mpz_urandomm(scalar,state,curve_parameters.order);
     //printf("scalar:");
     //gmp_printf("%Zd",scalar);
     //printf("\n\n");
@@ -393,10 +393,10 @@ void BLS12_test_G3_exp(){
     gmp_randstate_t state;
     gmp_randinit_default (state);
     gmp_randseed_ui(state,(unsigned long)time(NULL));
-    mpz_urandomm(s1,state,bls12_parameters.order);    //s1
-    mpz_urandomm(s2,state,bls12_parameters.order);    //s2
+    mpz_urandomm(s1,state,curve_parameters.order);    //s1
+    mpz_urandomm(s2,state,curve_parameters.order);    //s2
     mpz_mul(s12,s1,s2);            //s12
-    mpz_mod(s12,s12,bls12_parameters.order);
+    mpz_mod(s12,s12,curve_parameters.order);
     
     BLS12_generate_G1_point(&P);            //P
     BLS12_generate_G2_point(&Q);            //Q

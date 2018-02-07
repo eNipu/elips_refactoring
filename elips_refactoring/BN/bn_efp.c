@@ -56,7 +56,7 @@ void EFp_set_neg(EFp *ANS,EFp *P){
     ANS->infinity=P->infinity;
 }
 
-void EFp_rational_point(EFp *P){
+void EFp_rational_point_BN(EFp *P){
     Fp tmp1,tmp2,tmp_x;
     Fp_init(&tmp1);
     Fp_init(&tmp2);
@@ -69,7 +69,32 @@ void EFp_rational_point(EFp *P){
         Fp_set_random(&P->x,state);
         Fp_mul(&tmp1,&P->x,&P->x);
         Fp_mul(&tmp2,&tmp1,&P->x);
-        Fp_sub_mpz(&tmp_x,&tmp2,bn_curve_coefficient.curve_b);
+        Fp_sub_mpz(&tmp_x,&tmp2,curve_parameters.curve_b);
+        if(Fp_legendre(&tmp_x)==1){
+            Fp_sqrt(&P->y,&tmp_x);
+            break;
+        }
+    }
+    
+    Fp_clear(&tmp1);
+    Fp_clear(&tmp2);
+    Fp_clear(&tmp_x);
+}
+
+void EFp_rational_point_BLS12(EFp *P){
+    Fp tmp1,tmp2,tmp_x;
+    Fp_init(&tmp1);
+    Fp_init(&tmp2);
+    Fp_init(&tmp_x);
+    gmp_randstate_t state;
+    gmp_randinit_default (state);
+    gmp_randseed_ui(state,(unsigned long)time(NULL));
+    
+    while(1){
+        Fp_set_random(&P->x,state);
+        Fp_mul(&tmp1,&P->x,&P->x);
+        Fp_mul(&tmp2,&tmp1,&P->x);
+        Fp_add_mpz(&tmp_x,&tmp2,curve_parameters.curve_b);
         if(Fp_legendre(&tmp_x)==1){
             Fp_sqrt(&P->y,&tmp_x);
             break;

@@ -27,10 +27,10 @@ void init_precoms(int curvetype){
     
     mpz_init(prime_p);
     if (curvetype == 1) {
-        mpz_set(prime_p,bn_parameters.prime);
+        mpz_set(prime_p,curve_parameters.prime);
     }
     else{
-        mpz_set(prime_p,bls12_parameters.prime);
+        mpz_set(prime_p,curve_parameters.prime);
     }
     
     Fp_init(&Fp_basis);
@@ -81,13 +81,11 @@ void get_epsilon(){
     Fp_clear(&result2);
 }
 
-//TODO: Fp6_set
 void set_basis(){
     Fp_set_ui(&Fp_basis,1);
     Fp2_set_ui(&Fp2_basis,1);
     Fp6_set_ui(&Fp6_basis,0);
     Fp_set_ui(&Fp6_basis.x1.x0,1);
-    
     Fp2_inv(&Fp2_basis_inv,&Fp2_basis);
 }
 

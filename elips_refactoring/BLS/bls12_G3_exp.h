@@ -12,7 +12,6 @@
 #include "bn_utils.h"
 #include "bls12_timeprint.h"
 #include "bls12_frobenius.h"
-#include "bls12_settings.h"
 
 //G3
 extern void BLS12_plain_G3_exp(Fp12 *ANS,Fp12 *A,mpz_t scalar);

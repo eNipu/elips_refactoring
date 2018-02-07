@@ -14,7 +14,7 @@
 
 extern int isCleared; // 1 is cleared. 0 is not cleared
 
-struct bn_params {
+struct curve_params {
     mpz_t prime;
     mpz_t X;
     int sign;
@@ -25,54 +25,49 @@ struct bn_params {
     mpz_t EFp6_total;
     mpz_t EFp12_total;
     mpz_t EFpd_total;
-//    mpz_t curve_parameter_A;
-//    mpz_t curve_parameter_B;
+    mpz_t curve_a;
+    mpz_t curve_b;
 };
 /**
  * @brief BN curve's systematically obtained parameters.
  *
  * It's a global variable that give access to BN public parameters.
  */
-extern struct bn_params bn_parameters;
+extern struct curve_params curve_parameters;
 
-/**
- * @brief BN curve's constant values.
- *
- * BN curve y^2 = x^3+ a * x has one constant value a. But at first we need to get the value of a by putting
- * arbitary values of x.
- */
-struct bn_coefficient{
-    mpz_t curve_a;            /**< Constant a in BN pairing-friedly elliptic curve y^2 = x^3+ a * x BN curve*/
-    mpz_t curve_b;        /**< Temoporary variable for constant a*/
-};
-
-/**
- * @brief BN curve's constants.
- *
- * It's a global variable that give access to BN constant term a.
- */
-extern struct bn_coefficient bn_curve_coefficient;
-
-
-#define X_length 114
+#define BN_X_length 114
 
 extern gmp_randstate_t state;
 
-extern int X_binary[X_length+1];
-extern int X_binary_opt[X_length+3];
+extern int X_binary[BN_X_length+1];
+extern int X_binary_opt[BN_X_length+3];
 
+//BLS12
+extern int BLS12_X_length;
+extern mpz_t BLS12_X;
+extern int BLS12_X_binary[78];
 
 
 //init
-extern void init_settings(void);
-extern void init_parameters( void);
-extern void generate_X(void);
-extern int  generate_prime(void);
-extern int  generate_order(void);
-extern void generate_trace(void);
-extern void set_curve_parameter(void);
+extern void init_bn_settings(void);
+extern void init_bn_parameters( void);
+extern void generate_bn_mother_parameter(void);
+extern int  generate_bn_prime(void);
+extern int  generate_bn_order(void);
+extern void generate_bn_trace(void);
+extern void set_bn_curve_parameter(void);
 extern void weil(void);
 extern void bn_print_parameters(void);
+
+extern void init_bls12_settings(void);
+extern void init_bls12_parameters( void);
+extern void BLS12_generate_X(void);
+extern int  BLS12_generate_prime(void);
+extern int  BLS12_generate_order(void);
+extern void BLS12_generate_trace(void);
+extern void BLS12_set_curve_parameter(void);
+extern void BLS12_weil(void);
+extern void BLS12_print_parameters(void);
 
 
 

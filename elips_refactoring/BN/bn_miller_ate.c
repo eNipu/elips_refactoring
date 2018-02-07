@@ -21,7 +21,7 @@ void Miller_algo_for_plain_ate(Fp12 *ANS,EFp12 *P,EFp12 *Q){
     Fp_init(&L);
     mpz_t loop;
     mpz_init(loop);
-    mpz_sub_ui(loop,bn_parameters.trace_t,1);
+    mpz_sub_ui(loop,curve_parameters.trace_t,1);
     int i,length;
     length=(int)mpz_sizeinbase(loop,2);
     char binary[length];

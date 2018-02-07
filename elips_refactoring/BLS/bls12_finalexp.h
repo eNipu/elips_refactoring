@@ -10,7 +10,6 @@
 #define bls12_finalexp_h
 
 #include "bls12_frobenius.h"
-#include "bls12_settings.h"
 
 //final exp
 extern void BLS12_Final_exp_plain(Fp12 *ANS,Fp12 *A);

@@ -23,11 +23,11 @@ void Final_exp_plain(Fp12 *ANS,Fp12 *A){
     Fp12_frobenius_map_p2(&t0,A);
     Fp12_mul(A,&t0,A);
     
-    mpz_pow_ui(exp,bn_parameters.prime,4);
-    mpz_pow_ui(buf,bn_parameters.prime,2);
+    mpz_pow_ui(exp,curve_parameters.prime,4);
+    mpz_pow_ui(buf,curve_parameters.prime,2);
     mpz_sub(exp,exp,buf);
     mpz_add_ui(exp,exp,1);
-    mpz_tdiv_q(exp,exp,bn_parameters.order);
+    mpz_tdiv_q(exp,exp,curve_parameters.order);
     Fp12_pow(ANS,A,exp);
     
     mpz_clear(exp);
@@ -101,7 +101,7 @@ void Fp12_pow_X(Fp12 *ANS,Fp12 *A){
     Fp12_frobenius_map_p6(&A_inv,A);
     
     Fp12_set(&tmp,A);
-    for(i=X_length-1; i>=0; i--){
+    for(i=BN_X_length-1; i>=0; i--){
         switch(X_binary[i]){
             case 0:
                 Fp12_sqr(&tmp,&tmp);

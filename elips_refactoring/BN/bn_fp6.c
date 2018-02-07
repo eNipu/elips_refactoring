@@ -246,7 +246,7 @@ int  Fp6_legendre(Fp6 *A){
     Fp6 tmp;
     Fp6_init(&tmp);
     
-    mpz_pow_ui(exp,bn_parameters.prime,6);
+    mpz_pow_ui(exp,curve_parameters.prime,6);
     mpz_sub_ui(exp,exp,1);
     mpz_tdiv_q_ui(exp,exp,2);
     Fp6_pow(&tmp,A,exp);
@@ -268,7 +268,7 @@ int  Fp6_isCNR(Fp6 *A){
     mpz_t exp;
     mpz_init(exp);
     
-    mpz_pow_ui(exp,bn_parameters.prime,6);
+    mpz_pow_ui(exp,curve_parameters.prime,6);
     mpz_sub_ui(exp,exp,1);
     mpz_tdiv_q_ui(exp,exp,3);
     Fp6_pow(&tmp,A,exp);
@@ -306,8 +306,8 @@ void Fp6_sqrt(Fp6 *ANS,Fp6 *A){
     Fp2_sqrt(&tmp2.x0,&tmp1.x0);
     Fp2_inv(&tmp2.x0,&tmp2.x0);
     Fp2_set(&tmp2.x0,&tmp2.x0);
-    mpz_pow_ui(exp,bn_parameters.prime,8);
-    mpz_pow_ui(buf,bn_parameters.prime,4);
+    mpz_pow_ui(exp,curve_parameters.prime,8);
+    mpz_pow_ui(buf,curve_parameters.prime,4);
     mpz_add(exp,exp,buf);
     mpz_add_ui(exp,exp,2);
     mpz_tdiv_q_ui(exp,exp,2);

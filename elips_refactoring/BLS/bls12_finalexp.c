@@ -27,11 +27,11 @@ void BLS12_Final_exp_plain(Fp12 *ANS,Fp12 *A){
     BLS12_Fp12_frobenius_map_p2(&Buf1,&Tmp);
     Fp12_mul(&Tmp,&Buf1,&Tmp);
     
-    mpz_pow_ui(exp,bls12_parameters.prime,4);
-    mpz_pow_ui(buf,bls12_parameters.prime,2);
+    mpz_pow_ui(exp,curve_parameters.prime,4);
+    mpz_pow_ui(buf,curve_parameters.prime,2);
     mpz_sub(exp,exp,buf);
     mpz_add_ui(exp,exp,1);
-    mpz_tdiv_q(exp,exp,bls12_parameters.order);
+    mpz_tdiv_q(exp,exp,curve_parameters.order);
     Fp12_pow(ANS,&Tmp,exp);
     
     

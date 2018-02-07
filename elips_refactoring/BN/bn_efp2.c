@@ -69,7 +69,7 @@ void EFp2_rational_point(EFp2 *P){
         Fp2_set_random(&P->x,state);
         Fp2_sqr(&tmp1,&P->x);
         Fp2_mul(&tmp2,&tmp1,&P->x);
-        mpz_sub(tmp2.x0.x0,tmp2.x0.x0,bn_curve_coefficient.curve_b);
+        mpz_sub(tmp2.x0.x0,tmp2.x0.x0,curve_parameters.curve_b);
         if(Fp2_legendre(&tmp2)==1){
             Fp2_sqrt(&P->y,&tmp2);
             break;

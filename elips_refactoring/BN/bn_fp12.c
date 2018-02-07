@@ -162,7 +162,7 @@ int  Fp12_legendre(Fp12 *A){
     Fp12 tmp;
     Fp12_init(&tmp);
     
-    mpz_pow_ui(exp,bn_parameters.prime,12);
+    mpz_pow_ui(exp,curve_parameters.prime,12);
     mpz_sub_ui(exp,exp,1);
     mpz_tdiv_q_ui(exp,exp,2);
     Fp12_pow(&tmp,A,exp);
@@ -200,7 +200,7 @@ void Fp12_sqrt(Fp12 *ANS,Fp12 *A){
     while(Fp12_legendre(&n)!=-1){
         Fp12_set_random(&n,state);
     }
-    mpz_pow_ui(q,bn_parameters.prime,12);
+    mpz_pow_ui(q,curve_parameters.prime,12);
     mpz_sub_ui(q,q,1);
     mpz_mod_ui(result,q,2);
     e=0;

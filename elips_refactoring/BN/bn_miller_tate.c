@@ -15,9 +15,9 @@ void Miller_algo_for_tate(Fp12 *ANS,EFp12 *P,EFp12 *Q){
     Fp12 f;
     Fp12_init(&f);
     int i,length;
-    length=(int)mpz_sizeinbase(bn_parameters.order,2);
+    length=(int)mpz_sizeinbase(curve_parameters.order,2);
     char binary[length];
-    mpz_get_str(binary,2,bn_parameters.order);
+    mpz_get_str(binary,2,curve_parameters.order);
     
     //set
     Fp_set(&Tmp_P.x,&P->x.x0.x0.x0);

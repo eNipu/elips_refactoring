@@ -21,12 +21,13 @@ int main(int argc, const char * argv[]) {
 //    BN12_test_x_ate_pairing();
 //    BN12_test_plain_ate_pairing();
 //    BN12_test_opt_ate_pairing();
-//    clear_bn();
-    
-    bls12_inits();
-    BLS12_print_parameters();
-    BLS12_test_opt_ate_pairing();
     clear_parameters();
     
+//    bls12_inits();
+//    BLS12_print_parameters();
+//    BLS12_test_opt_ate_pairing();
+//    clear_parameters();
+    
+    generate_kss16_X();
     return 0;
 }

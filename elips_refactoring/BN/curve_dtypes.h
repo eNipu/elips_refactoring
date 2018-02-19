@@ -36,4 +36,23 @@ struct EFp12{
     int infinity;
 };
 
+typedef struct EFp4 EFp4;
+struct EFp4{
+    struct Fp4 x,y;
+    int infinity;
+};
+
+typedef struct EFp8 EFp8;
+struct EFp8{
+    struct Fp8 x,y;
+    int infinity;
+};
+
+typedef struct EFp16 EFp16;
+struct EFp16{
+    struct Fp16 x,y;
+    int infinity;
+};
+
+
 #endif /* curve_dtypes_h */

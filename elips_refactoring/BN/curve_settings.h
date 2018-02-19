@@ -9,8 +9,8 @@
 #define bn_settings_h
 
 #include "Commont_headers.h"
-#include "bn_fp.h"
-#include "bn_fp2.h"
+//#include "bn_fp.h"
+//#include "bn_fp2.h"
 
 extern int isCleared; // 1 is cleared. 0 is not cleared
 
@@ -39,8 +39,8 @@ extern struct curve_params curve_parameters;
 
 extern gmp_randstate_t state;
 
-extern int X_binary[BN_X_length+1];
-extern int X_binary_opt[BN_X_length+3];
+extern char X_binary[BN_X_length+1];
+extern char X_binary_opt[BN_X_length+3];
 
 //BLS12
 extern int BLS12_X_length;
@@ -70,5 +70,17 @@ extern void BLS12_weil(void);
 extern void BLS12_print_parameters(void);
 
 
+//KSS-16
+#define TRUE 1
+#define FALSE 0
+#define KSS16_X_length 35
+
+extern char X_bit_binary_kss16[KSS16_X_length+1];
+
+//mpz_t X;
+//mpz_t PRIME_P,order_r,trace_t, order_EFp, a_x;
+//mpz_t tmp_a;
+
+extern void generate_kss16_X(void);
 
 #endif /* bn_settings_h */

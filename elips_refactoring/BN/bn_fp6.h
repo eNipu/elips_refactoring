@@ -10,7 +10,7 @@
 #define bn_fp6_h
 
 #include "bn_fp2.h"
-//#include "field_dtype.h"
+
 
 extern void Fp6_init(Fp6 *A);
 extern void Fp6_clear(Fp6 *A);

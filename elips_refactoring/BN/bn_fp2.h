@@ -9,8 +9,9 @@
 #ifndef bn_fp2_h
 #define bn_fp2_h
 
-#include "field_dtype.h"
+
 #include "bn_fp.h"
+#include "field_dtype.h"
 #include "bn_bls12_precoms.h"
 
 //Fp2

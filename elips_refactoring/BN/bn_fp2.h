@@ -9,12 +9,11 @@
 #ifndef bn_fp2_h
 #define bn_fp2_h
 
-#include "bn_field_dtype.h"
+#include "field_dtype.h"
 #include "bn_fp.h"
 #include "bn_bls12_precoms.h"
 
 //Fp2
-
 extern void Fp2_init(Fp2 *A);
 extern void Fp2_clear(Fp2 *A);
 extern void Fp2_printf(Fp2 *A,char *str);

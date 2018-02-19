@@ -127,7 +127,7 @@
 		EFB2B7C8202941F2006973E8 /* bls12_G3_exp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_G3_exp.h; sourceTree = "<group>"; };
 		EFB2B7CA202942EC006973E8 /* bls12_test_pairings.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bls12_test_pairings.c; sourceTree = "<group>"; };
 		EFB2B7CB202942ED006973E8 /* bls12_test_pairings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bls12_test_pairings.h; sourceTree = "<group>"; };
-		EFBDC70B2021598B00A70838 /* bn_field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_field_dtype.h; sourceTree = "<group>"; };
+		EFBDC70B2021598B00A70838 /* field_dtype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = field_dtype.h; sourceTree = "<group>"; };
 		EFBDC70C20216C9F00A70838 /* bn_fp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp6.c; sourceTree = "<group>"; };
 		EFBDC70D20216C9F00A70838 /* bn_fp6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp6.h; sourceTree = "<group>"; };
 		EFBDC70F20216D0200A70838 /* bn_fp12.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_fp12.c; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		EFBDC71F2022EA6600A70838 /* bn_prints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_prints.h; sourceTree = "<group>"; };
 		EFBDC7212022F9AA00A70838 /* bn_efp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_efp.c; sourceTree = "<group>"; };
 		EFBDC7222022F9AA00A70838 /* bn_efp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_efp.h; sourceTree = "<group>"; };
-		EFBDC7252022FA0F00A70838 /* bn_curve_dtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_curve_dtypes.h; sourceTree = "<group>"; };
+		EFBDC7252022FA0F00A70838 /* curve_dtypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = curve_dtypes.h; sourceTree = "<group>"; };
 		EFBDC7272022FCCD00A70838 /* bn_efp2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_efp2.c; sourceTree = "<group>"; };
 		EFBDC7282022FCCD00A70838 /* bn_efp2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_efp2.h; sourceTree = "<group>"; };
 		EFBDC72A2022FEA200A70838 /* bn_efp6.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_efp6.c; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 			children = (
 				EFBDC7182022DB1500A70838 /* bn_clears.c */,
 				EFBDC7192022DB1500A70838 /* bn_clears.h */,
-				EFBDC7252022FA0F00A70838 /* bn_curve_dtypes.h */,
+				EFBDC7252022FA0F00A70838 /* curve_dtypes.h */,
 				EFBDC7212022F9AA00A70838 /* bn_efp.c */,
 				EFBDC7222022F9AA00A70838 /* bn_efp.h */,
 				EFBDC7272022FCCD00A70838 /* bn_efp2.c */,
@@ -193,7 +193,7 @@
 				EFBDC72B2022FEA200A70838 /* bn_efp6.h */,
 				EFBDC72D2022FF1100A70838 /* bn_efp12.c */,
 				EFBDC72E2022FF1100A70838 /* bn_efp12.h */,
-				EFBDC70B2021598B00A70838 /* bn_field_dtype.h */,
+				EFBDC70B2021598B00A70838 /* field_dtype.h */,
 				EF8514522023F2C100640A0F /* bn_final_exp.c */,
 				EF8514532023F2C100640A0F /* bn_final_exp.h */,
 				EFF14497201F0976009D8F2B /* bn_fp.c */,
@@ -285,6 +285,13 @@
 			path = BLS;
 			sourceTree = "<group>";
 		};
+		EFE89531203A565600A4A377 /* KSS16 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = KSS16;
+			sourceTree = "<group>";
+		};
 		EFFFEDCA2019A1BC006B51FA = {
 			isa = PBXGroup;
 			children = (
@@ -304,11 +311,12 @@
 		EFFFEDD52019A1BC006B51FA /* elips_refactoring */ = {
 			isa = PBXGroup;
 			children = (
+				EFE89531203A565600A4A377 /* KSS16 */,
 				EF58E68D20246B54005CA2D5 /* BLS */,
+				EF58E68920243561005CA2D5 /* BN */,
 				EFFFEDDD2019A1CD006B51FA /* libgmp.a */,
 				EFFFEDE22019A240006B51FA /* Commont_headers.h */,
 				EFFFEDD62019A1BC006B51FA /* main.c */,
-				EF58E68920243561005CA2D5 /* BN */,
 			);
 			path = elips_refactoring;
 			sourceTree = "<group>";

@@ -9,7 +9,7 @@
 #ifndef bn_efp_h
 #define bn_efp_h
 
-#include "bn_curve_dtypes.h"
+#include "curve_dtypes.h"
 
 extern void EFp_init(EFp *P);
 extern void EFp_clear(EFp *P);

@@ -10,7 +10,7 @@
 #define bn_fp_h
 
 #include "curve_settings.h"
-#include "bn_field_dtype.h"
+#include "field_dtype.h"
 
 //Fp
 

@@ -31,6 +31,7 @@ void clear_parameters(){
 //    }
 //    printf("Size in base after %d\n ",(int)mpz_sizeinbase(curve_parameters.EFpd_total,2));
     mpz_clear(curve_parameters.curve_b);
+    mpz_clear(curve_parameters.curve_a);
     
     Fp_clear(&Fp_basis);
     Fp2_clear(&Fp2_basis);

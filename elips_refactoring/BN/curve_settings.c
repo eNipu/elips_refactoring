@@ -31,8 +31,6 @@ void init_bn_settings(){
     set_bn_curve_parameter();
 }
 
-
-
 void init_bls12_settings(){
     init_bls12_parameters();
     
@@ -43,6 +41,14 @@ void init_bls12_settings(){
     
     BLS12_weil();
     BLS12_set_curve_parameter();
+}
+
+void init_kss16_settings(void){
+    
+    init_kss16_parameters();
+    
+    generate_kss16_motherparam();
+    generate_kss16_parameters();
 }
 
 
@@ -97,6 +103,29 @@ void init_bls12_parameters(){
         BLS12_X_binary[i]=0;
     }
 }
+
+void init_kss16_parameters(void){
+    //parameters
+    mpz_init(curve_parameters.prime);
+    mpz_init(curve_parameters.X);
+    mpz_init(curve_parameters.trace_t);
+    mpz_init(curve_parameters.order);
+    mpz_init(curve_parameters.EFp_total);
+    mpz_init(curve_parameters.EFp2_total);
+    mpz_init(curve_parameters.EFp6_total);
+    mpz_init(curve_parameters.EFp12_total);
+    mpz_init(curve_parameters.curve_a);
+//    mpz_init(curve_parameters.curve_b);
+    
+    int i;
+    for(i=0; i<KSS16_X_length+1; i++){
+        X_bit_binary_kss16[i]=0;
+    }
+}
+
+
+
+
 void generate_bn_mother_parameter(){
     int i;
     mpz_t buf;
@@ -257,7 +286,17 @@ void weil(){
 }
 
 
-void bn_print_parameters(){
+static void print_bn_blscurve() {
+    gmp_printf("\nelliptic curve\n");
+    gmp_printf("E:y^2=x^3-%Zd\n",curve_parameters.curve_b);
+}
+
+static void print_kss16curve() {
+    gmp_printf("\nKSS16 curve\n");
+    gmp_printf("E:y^2=x^3 + %Zd\n",curve_parameters.curve_a);
+}
+
+void print_curve_parameters(){
     printf("====================================================================================\n");
     printf("BN12\n\n");
     gmp_printf("parameters\n");
@@ -266,13 +305,16 @@ void bn_print_parameters(){
     gmp_printf("order (%dbit length) : %Zd \n",(int)mpz_sizeinbase(curve_parameters.order,2),curve_parameters.order);
     gmp_printf("trace (%dbit length) : %Zd \n",(int)mpz_sizeinbase(curve_parameters.trace_t,2),curve_parameters.trace_t);
     
-    gmp_printf("\nelliptic curve\n");
-    gmp_printf("E:y^2=x^3-%Zd\n",curve_parameters.curve_b);
-    
-    gmp_printf("\nmodulo polynomial\n");
-    gmp_printf("Fp2  : f(x) = x^2+1\n");
-    gmp_printf("Fp6  : f(x) = x^3-(alpha+1)\n");
-    gmp_printf("Fp12 : f(x) = x^2-beta\n");
+    if (mpz_cmp_ui(curve_parameters. curve_b, 0) > 0) {
+         print_bn_blscurve();
+    }
+    if (mpz_cmp_ui(curve_parameters.curve_a, 0) > 0) {
+        print_kss16curve();
+    }
+//    gmp_printf("\nmodulo polynomial\n");
+//    gmp_printf("Fp2  : f(x) = x^2+1\n");
+//    gmp_printf("Fp6  : f(x) = x^3-(alpha+1)\n");
+//    gmp_printf("Fp12 : f(x) = x^2-beta\n");
     
 //    gmp_printf("\nnumber of the total rational points\n");
 //    gmp_printf("EFp total   : %Zd\n",curve_parameters.EFp_total);
@@ -450,7 +492,7 @@ void BLS12_print_parameters(){
 //---------------------------------------------------------------------
 
 
-void generate_kss16_X(void){
+void generate_kss16_motherparam(void){
     //c1 = 2
     // 2^ -2^32-2^18+2^8+1
     X_bit_binary_kss16[35]=1;
@@ -487,7 +529,7 @@ void generate_kss16_X(void){
     return;
 }
 
-void KSS_16_parameters(void){
+void generate_kss16_parameters(void){
     
     mpz_t tmp1,tmp2,two;
     mpz_init(tmp1);
@@ -566,8 +608,7 @@ void KSS_16_parameters(void){
         printf("not  prime number!\n");
         exit(0);
     }
-    
-    
+
     mpz_set_ui(curve_parameters.curve_a, 1);
     
 //    struct EFp P,ANS;

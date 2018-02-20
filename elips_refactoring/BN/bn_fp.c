@@ -8,6 +8,7 @@
 
 #include "bn_fp.h"
 
+#define c1 2
 
 void Fp_init(Fp *A){
     mpz_init(A->x0);
@@ -60,6 +61,11 @@ void Fp_mul_basis(Fp *ANS,Fp *A){
     mpz_sub(ANS->x0,curve_parameters.prime,A->x0);
 }
 
+void Fp_mul_basis_KSS16(Fp *ANS,Fp *A){
+    mpz_mul_ui(ANS->x0,A->x0,c1);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.curve_a);
+}
+
 void Fp_add(Fp *ANS,Fp *A,Fp *B){
     mpz_add(ANS->x0,A->x0,B->x0);
     mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
@@ -92,6 +98,11 @@ void Fp_sub_mpz(Fp *ANS,Fp *A,mpz_t B){
 
 void Fp_inv(Fp *ANS,Fp *A){
     mpz_invert(ANS->x0,A->x0,curve_parameters.prime);
+}
+void Fp_div(Fp *ANS, Fp *A, Fp *B){
+    mpz_invert(ANS->x0,B->x0,curve_parameters.prime);
+    mpz_mul(ANS->x0,A->x0,ANS->x0);
+    mpz_mod(ANS->x0,ANS->x0,curve_parameters.prime);
 }
 
 int  Fp_legendre(Fp *A){

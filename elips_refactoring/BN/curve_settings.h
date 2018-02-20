@@ -57,7 +57,7 @@ extern int  generate_bn_order(void);
 extern void generate_bn_trace(void);
 extern void set_bn_curve_parameter(void);
 extern void weil(void);
-extern void bn_print_parameters(void);
+extern void print_curve_parameters(void);
 
 extern void init_bls12_settings(void);
 extern void init_bls12_parameters( void);
@@ -81,6 +81,8 @@ extern char X_bit_binary_kss16[KSS16_X_length+1];
 //mpz_t PRIME_P,order_r,trace_t, order_EFp, a_x;
 //mpz_t tmp_a;
 
-extern void generate_kss16_X(void);
-
+extern void init_kss16_settings(void);
+extern void generate_kss16_motherparam(void);
+extern void generate_kss16_parameters(void);
+extern void init_kss16_parameters(void);
 #endif /* bn_settings_h */

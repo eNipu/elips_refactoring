@@ -14,10 +14,12 @@
 #include "bls12_pairings.h"
 #include "bls12_test_pairings.h"
 
+#include "kss16_inits.h"
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     init_bn();
-    bn_print_parameters();
+    print_curve_parameters();
 //    BN12_test_x_ate_pairing();
 //    BN12_test_plain_ate_pairing();
 //    BN12_test_opt_ate_pairing();
@@ -28,6 +30,7 @@ int main(int argc, const char * argv[]) {
 //    BLS12_test_opt_ate_pairing();
 //    clear_parameters();
     
-    generate_kss16_X();
+    kss16_inits();
+    print_curve_parameters();
     return 0;
 }

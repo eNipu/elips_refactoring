@@ -31,6 +31,11 @@ int main(int argc, const char * argv[]) {
 //    clear_parameters();
     
     kss16_inits();
+//    mpz_t cc;
+//    mpz_init(cc);
+//    mpz_set_ui(cc, 2);
+//    mpz_invert(cc,cc,curve_parameters.prime);
+//    gmp_printf("CC== %Zd\n",cc);
     print_curve_parameters();
     return 0;
 }

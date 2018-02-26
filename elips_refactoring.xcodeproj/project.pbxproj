@@ -50,6 +50,8 @@
 		EFBDC7322023093200A70838 /* bn_generate_points.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC7302023093200A70838 /* bn_generate_points.c */; };
 		EFBDC735202309C100A70838 /* bn_frobenius.c in Sources */ = {isa = PBXBuildFile; fileRef = EFBDC733202309C100A70838 /* bn_frobenius.c */; };
 		EFC43EAA2019BF5D0033170A /* curve_settings.c in Sources */ = {isa = PBXBuildFile; fileRef = EFC43EA82019BF5D0033170A /* curve_settings.c */; };
+		EFE6FB2F2043A4A40008E95C /* fp8.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE6FB2D2043A4A40008E95C /* fp8.c */; };
+		EFE7A5B0203EA8D40018A628 /* fp4.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE7A5AE203EA8D40018A628 /* fp4.c */; };
 		EFE89537203ABF5A00A4A377 /* kss16_inits.c in Sources */ = {isa = PBXBuildFile; fileRef = EFE89535203ABF5A00A4A377 /* kss16_inits.c */; };
 		EFF14498201F0976009D8F2B /* bn_fp.c in Sources */ = {isa = PBXBuildFile; fileRef = EFF14497201F0976009D8F2B /* bn_fp.c */; };
 		EFF1449B201F0AEA009D8F2B /* bn_fp2.c in Sources */ = {isa = PBXBuildFile; fileRef = EFF14499201F0AEA009D8F2B /* bn_fp2.c */; };
@@ -158,6 +160,10 @@
 		EFBDC734202309C100A70838 /* bn_frobenius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_frobenius.h; sourceTree = "<group>"; };
 		EFC43EA82019BF5D0033170A /* curve_settings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = curve_settings.c; sourceTree = "<group>"; };
 		EFC43EA92019BF5D0033170A /* curve_settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = curve_settings.h; sourceTree = "<group>"; };
+		EFE6FB2D2043A4A40008E95C /* fp8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fp8.c; sourceTree = "<group>"; };
+		EFE6FB2E2043A4A40008E95C /* fp8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fp8.h; sourceTree = "<group>"; };
+		EFE7A5AE203EA8D40018A628 /* fp4.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fp4.c; sourceTree = "<group>"; };
+		EFE7A5AF203EA8D40018A628 /* fp4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fp4.h; sourceTree = "<group>"; };
 		EFE89535203ABF5A00A4A377 /* kss16_inits.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = kss16_inits.c; sourceTree = "<group>"; };
 		EFE89536203ABF5A00A4A377 /* kss16_inits.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kss16_inits.h; sourceTree = "<group>"; };
 		EFF14496201F0970009D8F2B /* bn_fp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bn_fp.h; sourceTree = "<group>"; };
@@ -199,10 +205,14 @@
 				EFBDC70B2021598B00A70838 /* field_dtype.h */,
 				EF8514522023F2C100640A0F /* bn_final_exp.c */,
 				EF8514532023F2C100640A0F /* bn_final_exp.h */,
-				EFF14497201F0976009D8F2B /* bn_fp.c */,
 				EFF14496201F0970009D8F2B /* bn_fp.h */,
+				EFF14497201F0976009D8F2B /* bn_fp.c */,
+				EFE7A5AE203EA8D40018A628 /* fp4.c */,
+				EFE7A5AF203EA8D40018A628 /* fp4.h */,
 				EFF14499201F0AEA009D8F2B /* bn_fp2.c */,
 				EFF1449A201F0AEA009D8F2B /* bn_fp2.h */,
+				EFE6FB2D2043A4A40008E95C /* fp8.c */,
+				EFE6FB2E2043A4A40008E95C /* fp8.h */,
 				EFBDC70C20216C9F00A70838 /* bn_fp6.c */,
 				EFBDC70D20216C9F00A70838 /* bn_fp6.h */,
 				EFBDC70F20216D0200A70838 /* bn_fp12.c */,
@@ -383,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFE7A5B0203EA8D40018A628 /* fp4.c in Sources */,
 				EF85145A2023F65500640A0F /* bn_line_tate.c in Sources */,
 				EFAD382B2028065D00DA5197 /* bls12_timeprint.c in Sources */,
 				EFB2B7B1202927D1006973E8 /* bls12_line_ate.c in Sources */,
@@ -424,6 +435,7 @@
 				EFAD383A20286C4000DA5197 /* bls12_skew_frobenius.c in Sources */,
 				EF85146C2024026C00640A0F /* bn_pairing_test.c in Sources */,
 				EFBDC72F2022FF1100A70838 /* bn_efp12.c in Sources */,
+				EFE6FB2F2043A4A40008E95C /* fp8.c in Sources */,
 				EF8514482023EF2300640A0F /* bn_skew_frobenius.c in Sources */,
 				EF8514512023F13200640A0F /* bn_p8sparse.c in Sources */,
 				EFBDC7292022FCCD00A70838 /* bn_efp2.c in Sources */,

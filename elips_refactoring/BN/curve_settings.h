@@ -77,7 +77,7 @@ extern void BLS12_print_parameters(void);
 
 extern char X_bit_binary_kss16[KSS16_X_length+1];
 
-//mpz_t X;
+extern mpz_t C1_INV; //c=2 its iverse value
 //mpz_t PRIME_P,order_r,trace_t, order_EFp, a_x;
 //mpz_t tmp_a;
 

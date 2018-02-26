@@ -90,6 +90,10 @@ void Fp2_mul_mpz(Fp2 *ANS,Fp2 *A,mpz_t B){
     Fp_mul_mpz(&ANS->x1,&A->x1,B);
 }
 
+void Fp2_mul_Fp(struct Fp2 *ANS,struct Fp2 *A,struct Fp *B){
+    Fp_mul(&ANS->x0,&ANS->x0,B);
+    Fp_mul(&ANS->x1,&ANS->x1,B);
+}
 void Fp2_mul_basis(Fp2 *ANS,Fp2 *A){
     Fp tmp;
     Fp_init(&tmp);
@@ -99,6 +103,58 @@ void Fp2_mul_basis(Fp2 *ANS,Fp2 *A){
     Fp_add(&ANS->x1,&tmp,&A->x1);
     
     Fp_clear(&tmp);
+}
+
+void Fp2_mul_basis_KSS16(Fp2 *ANS, Fp2 *A){
+    Fp_mul_basis_KSS16(&ANS->x0,&A->x1);
+    Fp_set(&ANS->x1,&A->x0);
+}
+
+void Fp2_mul_KSS16(Fp2 *ANS,Fp2 *A,Fp2 *B){
+    struct Fp tmp1,tmp2;
+    Fp_init(&tmp1);
+    Fp_init(&tmp2);
+    
+    //set
+    Fp_mul(&tmp2,&A->x1,&B->x1);//b*d
+    Fp_add(&tmp1,&A->x0,&A->x1);//a+b
+    Fp_add(&ANS->x1,&B->x0,&B->x1);//c+d
+    Fp_mul(&ANS->x1,&tmp1,&ANS->x1);//(a+b)(c+d)
+    Fp_mul(&tmp1,&A->x0,&B->x0);//a*c
+    //x0
+    Fp_mul_basis_KSS16(&ANS->x0,&tmp2);//b*d*v
+    Fp_add(&ANS->x0,&ANS->x0,&tmp1);//a*c+b*d*v
+    //x1
+    Fp_sub(&ANS->x1,&ANS->x1,&tmp1);
+    Fp_sub(&ANS->x1,&ANS->x1,&tmp2);
+    
+    //clear
+    Fp_clear(&tmp1);
+    Fp_clear(&tmp2);
+}
+
+void Fp2_sqr_KSS16(Fp2 *ANS,Fp2 *A){
+    struct Fp tmp1,tmp2,tmp3;
+    Fp_init(&tmp1);
+    Fp_init(&tmp2);
+    Fp_init(&tmp3);
+    
+    Fp_add(&tmp1,&A->x0,&A->x1);
+    Fp_mul_basis(&tmp2,&A->x1);
+    Fp_add(&tmp2,&tmp2,&A->x0);
+    Fp_mul(&tmp3,&A->x0,&A->x1);
+    
+    //x0
+    Fp_mul(&ANS->x0,&tmp1,&tmp2);
+    Fp_sub(&ANS->x0,&ANS->x0,&tmp3);
+    Fp_mul_basis(&tmp1,&tmp3);
+    Fp_sub(&ANS->x0,&ANS->x0,&tmp1);
+    //x1
+    Fp_add(&ANS->x1,&tmp3,&tmp3);
+    
+    Fp_clear(&tmp1);
+    Fp_clear(&tmp2);
+    Fp_clear(&tmp3);
 }
 
 void Fp2_inv_basis(Fp2 *ANS,Fp2 *A){
@@ -131,6 +187,31 @@ void Fp2_sqr(Fp2 *ANS,Fp2 *A){
     Fp_clear(&tmp1);
     Fp_clear(&tmp2);
 }
+
+void Fp2_sqr_kss16(struct Fp2 *ANS,struct Fp2 *A){
+    struct Fp tmp1,tmp2,tmp3;
+    Fp_init(&tmp1);
+    Fp_init(&tmp2);
+    Fp_init(&tmp3);
+    
+    Fp_add(&tmp1,&A->x0,&A->x1);
+    Fp_mul_basis_KSS16(&tmp2,&A->x1);
+    Fp_add(&tmp2,&tmp2,&A->x0);
+    Fp_mul(&tmp3,&A->x0,&A->x1);
+    
+    //x0
+    Fp_mul(&ANS->x0,&tmp1,&tmp2);
+    Fp_sub(&ANS->x0,&ANS->x0,&tmp3);
+    Fp_mul_basis_KSS16(&tmp1,&tmp3);
+    Fp_sub(&ANS->x0,&ANS->x0,&tmp1);
+    //x1
+    Fp_add(&ANS->x1,&tmp3,&tmp3);
+    
+    Fp_clear(&tmp1);
+    Fp_clear(&tmp2);
+    Fp_clear(&tmp3);
+}
+
 
 void Fp2_add(Fp2 *ANS,Fp2 *A,Fp2 *B){
     Fp_add(&ANS->x0,&A->x0,&B->x0);
@@ -176,6 +257,21 @@ void Fp2_inv(Fp2 *ANS,Fp2 *A){
     
     Fp2_clear(&frob);
     Fp2_clear(&tmp);
+}
+
+void Fp2_invert_kss16(Fp2 *ANS,Fp2 *A){
+    struct Fp2 frob,buf;
+    Fp2_init(&frob);
+    Fp2_init(&buf);
+    
+    Fp_set(&frob.x0,&A->x0);
+    Fp_neg(&frob.x1,&A->x1);
+    Fp2_mul_KSS16(&buf,A,&frob);
+    mpz_invert(buf.x0.x0,buf.x0.x0,curve_parameters.prime);
+    Fp2_mul_mpz(ANS,&frob,buf.x0.x0);
+    
+    Fp2_clear(&frob);
+    Fp2_clear(&buf);
 }
 
 int  Fp2_legendre(Fp2 *A){
@@ -347,5 +443,9 @@ int  Fp2_cmp_one(Fp2 *A){
         return 0;
     }
     return 1;
+}
+void Fp2_neg(Fp2 *ans,Fp2 *a){
+    Fp_neg(&ans->x0,&a->x0);
+    Fp_neg(&ans->x1,&a->x1);
 }
 

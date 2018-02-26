@@ -9,7 +9,7 @@
 #include "bn_fp.h"
 
 #define c1 2
-
+#define C1_INV
 void Fp_init(Fp *A){
     mpz_init(A->x0);
 }
@@ -254,6 +254,10 @@ int  Fp_cmp_one(Fp *A){
         return 0;
     }
     return 1;
+}
+
+void Fp_neg(struct Fp *ANS,struct Fp *A){
+    mpz_sub(ANS->x0,curve_parameters.prime,A->x0);
 }
 
 

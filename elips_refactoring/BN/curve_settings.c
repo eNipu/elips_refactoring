@@ -19,6 +19,8 @@ int BLS12_X_length;
 mpz_t BLS12_X;
 int BLS12_X_binary[78];
 
+mpz_t C1_INV;
+
 void init_bn_settings(){
     init_bn_parameters();
     
@@ -44,7 +46,6 @@ void init_bls12_settings(){
 }
 
 void init_kss16_settings(void){
-    
     init_kss16_parameters();
     
     generate_kss16_motherparam();
@@ -57,6 +58,9 @@ void init_kss16_settings(void){
 /*============================================================================*/
 void init_bn_parameters(){
     //parameters
+    mpz_init(C1_INV);
+    mpz_set_str(C1_INV,"307811691015337575251033109375721719032053783174105059253970117417628354711317451266514326962619782791",10);
+    
     mpz_init(curve_parameters.prime);
     mpz_init(curve_parameters.X);
     mpz_init(curve_parameters.trace_t);

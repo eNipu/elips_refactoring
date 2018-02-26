@@ -43,22 +43,6 @@ extern int  Fp_cmp_ui(Fp *A,unsigned long int UI);
 extern int  Fp_cmp_mpz(Fp *A,mpz_t B);
 extern int  Fp_cmp_zero(Fp *A);
 extern int  Fp_cmp_one(Fp *A);
-
-// #pragma mark Fp methods
-
-void Fp_sqr(struct Fp *ANS,struct Fp *A);
-void Fp_mul(struct Fp *ans,struct Fp *a,struct Fp *b);//ans=a*b mod p
-void Fp_mul_mpz(struct Fp *ans,struct Fp *a,mpz_t b);
-void Fp_mul_ui(struct Fp *ans,struct Fp *a,unsigned long int b);//ans=a*b mod p
-void Fp_mul_basis(struct Fp *ans,struct Fp *a);
-void Fp_div(struct Fp *ans,struct Fp *a,struct Fp *b);//ans=a/b mod p
-void Fp_pow(struct Fp *ans,struct Fp *a,mpz_t b);
-void Fp_sqrt(struct Fp *ans,struct Fp *a);//x^2=a mod p
-int  Fp_cmp_mpz(struct Fp *A,mpz_t B);
-void Fp_mul_mpz(struct Fp *ANS,struct Fp *A,mpz_t B);
-void Fp_neg(struct Fp *ANS,struct Fp *A);
-int  Fp_cmp(struct Fp *A,struct Fp *B);
-int  Fp_cmp_mpz(struct Fp *A,mpz_t B);
-//--------------------------------------------
+extern void Fp_neg(struct Fp *ANS,struct Fp *A);
 
 #endif /* bn_fp_h */

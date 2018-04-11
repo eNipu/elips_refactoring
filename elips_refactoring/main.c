@@ -22,20 +22,20 @@ int main(int argc, const char * argv[]) {
     print_curve_parameters();
 //    BN12_test_x_ate_pairing();
 //    BN12_test_plain_ate_pairing();
-//    BN12_test_opt_ate_pairing();
+    BN12_test_opt_ate_pairing();
     clear_parameters();
     
-//    bls12_inits();
-//    BLS12_print_parameters();
-//    BLS12_test_opt_ate_pairing();
-//    clear_parameters();
+    bls12_inits();
+    BLS12_print_parameters();
+    BLS12_test_opt_ate_pairing();
+    clear_parameters();
     
-    kss16_inits();
+//    kss16_inits();
 //    mpz_t cc;
 //    mpz_init(cc);
 //    mpz_set_ui(cc, 2);
 //    mpz_invert(cc,cc,curve_parameters.prime);
 //    gmp_printf("CC== %Zd\n",cc);
-    print_curve_parameters();
+//    print_curve_parameters();
     return 0;
 }
